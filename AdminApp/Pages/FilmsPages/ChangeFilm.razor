@@ -1,0 +1,230 @@
+﻿@inject IAdminService AdminService
+
+<div class="d-xl justify-content-center">
+	<div class="mb-3">
+		@if (Page.Equals(PageType.Delete))
+		{
+			<EditForm Model="@Model" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<InputText id="title" class="form-control me-2" @bind-Value="Model.Title" disabled placeholder="Title"></InputText>
+				<ValidationMessage For="@(()=> Model.Title)" />
+				<button type="submit" class="btn btn">Delete</button>
+			</EditForm>
+		}
+		@if (Page.Equals(PageType.Create))
+		{
+			<EditForm Model="@CreateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<div class="mb-3">
+					@*title*@
+					<InputText id="title" class="form-control me-2" @bind-Value="CreateModel.Title" placeholder="Title"></InputText>
+					<ValidationMessage For="@(()=> CreateModel.Title)" />
+				</div>
+				<div class="mb-3">
+					@*description*@
+					<InputText id="description" class="form-control me-2" @bind-Value="CreateModel.Description" placeholder="Description"></InputText>
+					<ValidationMessage For="@(()=> CreateModel.Description)" />
+				</div>
+				<div class="mb-3">
+					@*released*@
+					<InputDate id="released" class="form-control me-2" @bind-Value="CreateModel.Realeased" placeholder="Realeased"></InputDate>
+					<ValidationMessage For="@(()=> CreateModel.Realeased)" />
+				</div>
+				<div>
+					@*directorID*@
+					<InputSelect @bind-Value="CreateModel.DirectorId" class="form-control mb-3">
+						<option value=0>Director ...</option>
+						@foreach (var director in Directors)
+						{
+							<option value="@director.Id">
+								@director.Name
+							</option>
+						}
+					</InputSelect>
+					<ValidationMessage For="@(()=> CreateModel.DirectorId)" />
+				</div>
+				<div>
+					@*genres*@
+					<DataAnnotationsValidator />
+					<ValidationSummary />
+					<InputSelect @bind-Value="SelectedValues">
+						@foreach (var item in Genres)
+						{
+							<option value="@item.Id">@item.Name</option>
+						}
+					</InputSelect>
+				</div>
+				<div class="m-3">
+					@*free*@
+					<label>
+						<InputCheckbox @bind-Value="CreateModel.Free"></InputCheckbox>
+						Free Film
+						<ValidationMessage For="@(()=> CreateModel.Free)" />
+					</label>
+				</div>
+				<div>
+					@*filmurl*@
+					<InputText id="filmurl" class="form-control me-2" @bind-Value="CreateModel.FilmUrl" placeholder="FilmUrl.."></InputText>
+					<ValidationMessage For="@(()=> CreateModel.FilmUrl)" />
+				</div>
+				<button type="submit" class="btn btn">Create</button>
+			</EditForm>
+		}
+		@if (Page.Equals(PageType.Update))
+		{
+			<EditForm Model="@UpdateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<div class="mb-3">
+					@*filmid*@
+					<InputSelect @bind-Value="UpdateModel.Id" class="form-control mb-3">
+						<option value=0>Choose film to update..</option>
+						@foreach (var movie in Films)
+						{
+							<option value="@movie.Id">
+								@movie.Title
+							</option>
+						}
+					</InputSelect>
+					<ValidationMessage For="@(()=> UpdateModel.Id)" />
+				</div>
+				<div>
+					@*genres*@
+					<DataAnnotationsValidator />
+					<ValidationSummary />
+					<InputSelect @bind-Value="SelectedValues">
+						@foreach (var item in Genres)
+						{
+							<option value="@item.Id">@item.Name</option>
+						}
+					</InputSelect>
+				</div>
+				<div class="mb-3">
+					@*title*@
+					<InputText id="title" class="form-control me-2" @bind-Value="UpdateModel.Title" placeholder="New Title.."></InputText>
+					<ValidationMessage For="@(()=> UpdateModel.Title)" />
+				</div>
+				<div class="mb-3">
+					@*descripton*@
+					<InputText id="description" class="form-control me-2" @bind-Value="UpdateModel.Description" placeholder="New Description.."></InputText>
+					<ValidationMessage For="@(()=> UpdateModel.Description)" />
+				</div>
+				<div class="mb-3">
+					@*released*@
+					<InputDate id="released" class="form-control me-2" @bind-Value="UpdateModel.Realeased" placeholder="New Realeased date.."></InputDate>
+					<ValidationMessage For="@(()=> UpdateModel.Realeased)" />
+				</div>
+				<div>
+					@*director*@
+					<InputSelect @bind-Value="UpdateModel.DirectorId" class="form-control mb-3">
+						<option value=0>Choose director..</option>
+						@foreach (var director in Directors)
+						{
+							<option value="@director.Id">
+								@director.Name
+							</option>
+						}
+					</InputSelect>
+					<ValidationMessage For="@(()=> UpdateModel.DirectorId)" />
+				</div>
+				<div class="mb-3">
+					@*free*@
+					<label>
+						<InputCheckbox @bind-Value="UpdateModel.Free"></InputCheckbox>
+						Free Film
+						<ValidationMessage For="@(()=> UpdateModel)" />
+					</label>
+				</div>
+				<div>
+					@*filmurl*@
+					<InputText id="filmurl" class="form-control me-2" @bind-Value="UpdateModel.FilmUrl" placeholder="New FilmUrl.."></InputText>
+					<ValidationMessage For="@(()=> UpdateModel.FilmUrl)" />
+				</div>
+				<button type="submit" class="btn btn">Update</button>
+			</EditForm>
+		}
+	</div>
+</div>
+@code {
+	[Parameter] public CreateFilmDto CreateModel { get; set; } = new(); 
+	[Parameter] public UpdateFilmDto UpdateModel { get; set; } = new(); 
+	[Parameter] public FilmDto Model { get; set; } = new(); 
+	[Parameter] public string Page { get; set; } = string.Empty;
+	[Parameter] public EventCallback<string> OnChange { get; set; } 
+	public int[] SelectedValues { get; set; } = new int[] { }; 
+	public FilmGenreDto filmGenre { get; set; } = new();
+	public List<FilmGenreDto> filmGenres {get;set;} = new();
+	public List<DirectorDto> Directors { get; set; } = new();
+	public List<CreateGenreDto> Genres { get; set; } = new(); 
+	public List<FilmDto> Films { get; set; } = new(); 
+	public List<CreateGenreDto> AddGenres { get; set; } = new();
+	protected override async Task OnInitializedAsync()
+	{
+		Directors = await AdminService.ReadAsync<DirectorDto>("directors");
+		Films = await AdminService.ReadAsync<FilmDto>("films");
+		Genres = await AdminService.ReadAsync<CreateGenreDto>("genres");
+	}
+	private async Task SubmitChanges()
+	{
+		try
+		{
+			switch (Page)
+			{
+				case "Create":
+					await AdminService.CreateAsync<CreateFilmDto>("films", CreateModel);
+					Films = await AdminService.ReadAsync<FilmDto>("films");
+					foreach (var genre in Genres)
+					{
+						foreach (var item in SelectedValues)
+						{
+							if (genre.Id.Equals(item))
+							{
+								filmGenre.GenreId = item;
+								foreach (var film in Films)
+								{
+									if (film.Title.Equals(CreateModel.Title))
+									{
+										filmGenre.FilmId = film.Id;
+									}
+								}
+								await AdminService.CreateAsync<FilmGenreDto>("filmgenres", filmGenre);
+							}
+						}
+					}
+					await OnChange.InvokeAsync($"Film '{CreateModel.Title}'has been added");
+					break;
+				case "Update":
+					filmGenres = await AdminService.ReadAsync<FilmGenreDto>("filmgenres");
+					foreach (var item in filmGenres)
+					{
+						if(item.FilmId == UpdateModel.Id)
+						{	
+							await AdminService.DeleteAsync<FilmGenreDto>($"filmgenres", item);
+						}	
+					}
+					foreach (var genre in Genres)
+					{
+						foreach (var item in SelectedValues)
+						{
+							if (genre.Id.Equals(item))
+							{
+								filmGenre.GenreId = item;
+								filmGenre.FilmId = UpdateModel.Id;
+								await AdminService.CreateAsync<FilmGenreDto>("filmgenres", filmGenre);
+							}
+						}
+					}
+					await AdminService.UpdateAsync<UpdateFilmDto>($"films/{UpdateModel.Id}", UpdateModel);
+					await OnChange.InvokeAsync($"Film '{UpdateModel.Title}' has been updated.");
+					break;
+				case "Delete":
+					await AdminService.DeleteAsync<FilmDto>($"films/{Model.Id}");
+					await OnChange.InvokeAsync($"Film '{Model.Title}' has been deleted.");
+					break;
+				case "Add":
+					break;
+			}
+		}
+		catch
+		{
+			await OnChange.InvokeAsync($"Could not submit the changes to the film '{CreateModel.Title}'.");
+		}
+	}
+}
+}

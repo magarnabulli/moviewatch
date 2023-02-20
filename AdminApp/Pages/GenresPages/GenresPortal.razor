@@ -1,0 +1,65 @@
+﻿@inject IAdminService AdminService
+
+<div class="d-flex me-1">
+	<a href="/" class="btn btn-outline-secondary rounded-0 me-1">Home</a>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Index)">View</button>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Create)">Create</button>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Update)">Update</button>
+</div>
+@if (!string.IsNullOrEmpty(Alert))
+{
+	<div class="d-flex">
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>@Alert</strong>
+			<button type="button" @onclick="CloseAlert" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+}
+@if (Navigation == PageType.Index)
+	{
+		<GenresIndex OnClick="OnClick" Model="Model"></GenresIndex>
+	}
+	@if (Navigation == PageType.Create)
+	{
+		<ChangeGenre Page="@Navigation" OnChange="OnChange"></ChangeGenre>
+	}
+	@if (Navigation == PageType.Delete || Navigation == PageType.Update)
+	{
+		<ChangeGenre Page="@Navigation" OnChange="OnChange" Model="Genre"></ChangeGenre>
+	}
+	@code {
+	public List<GenreDto> Model { get; set; } = new();
+	public string Alert { get; set; } = string.Empty;
+	public string Navigation { get; set; } = string.Empty;
+	public GenreDto Genre { get; set; } = new();
+
+	void ChangePageType(string pageType) => Navigation = pageType;
+	void CloseAlert() => Alert = string.Empty;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Alert = string.Empty;
+		Model = await AdminService.ReadAsync<GenreDto>("genres");
+	}
+	async Task OnClick(ClickModel model)
+	{
+		if (model.PageType.Equals(PageType.Update) || model.PageType.Equals(PageType.Delete))
+		{
+			Genre = await AdminService.ReadOneAsync<GenreDto>($"genres/{model.Id}") ?? new();
+			ChangePageType(model.PageType);
+		}
+	}
+	async Task OnChange(string alert)
+	{
+		try
+		{
+			Alert = alert;
+			Model = await AdminService.ReadAsync<GenreDto>("genres");
+			ChangePageType(PageType.Index);
+		}
+		catch
+		{
+			Alert = "Could not handle the genre.";
+		}
+	}
+}

@@ -1,0 +1,34 @@
+﻿<h3>Directors</h3>
+<table class="table m-1">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Films</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model)
+		{
+			<tr>
+				<td>@item.Name</td>
+				<td>
+					@foreach (var film in item.Films)
+					{
+						<li>@film.Title</li>
+					}
+				</td>
+				<td>
+					<div class="d-flex me-1">
+						<button class="btn btnbtn-outline-danger rounded-0" @onclick="@(()=> OnClick.InvokeAsync(new ClickModel(PageType.Delete, item.Id)))">Delete</button>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@code {
+	[Parameter] public List<DirectorDto> Model { get; set; } = new();
+	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
+	[Parameter] public string Page { get; set; } = string.Empty;
+}

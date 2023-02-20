@@ -1,0 +1,36 @@
+﻿@inject IAdminService AdminService
+<table class="table m-1">
+	<thead>
+		<tr>
+			<th>Name</th>
+			<th>Films</th>
+			<th>Delete</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var genre in Model)
+		{
+			<tr>
+				<td>@genre.Name</td>
+				<td>
+					@foreach (var film in genre.FilmGenres)
+					{
+						<li>@film.Title</li>
+					}
+				</td>
+				<td>
+					<div class="d-flex me-1">
+						<button class="btn btn-outline-danger rounded-0" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, genre.Id)))">Delete</button>
+					</div>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
+
+@code {
+	[Parameter] public List<GenreDto> Model { get; set; } = new();
+	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
+	[Parameter] public string Page { get; set; } = string.Empty;
+
+}

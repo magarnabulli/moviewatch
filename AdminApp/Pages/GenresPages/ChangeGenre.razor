@@ -1,0 +1,86 @@
+﻿@inject IAdminService AdminService
+<div class="d-xl-block justify-content-center">
+	<div class="mb-3">
+		@if (Page.Equals(PageType.Delete))
+		{
+		<EditForm Model="@Model" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+			<InputText id="name" class="form-control me-2" @bind-Value="Model.Name" disabled placeholder="Genre.."></InputText>
+			<ValidationMessage For="@(()=> Model.Name)"></ValidationMessage>
+			<button type="submit" class="btn btn">Delete</button>
+		</EditForm>
+		}
+		@if (Page.Equals(PageType.Create))
+		{
+			<EditForm Model="@CreateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<div class="mb-3">
+					<InputText id="name" class="form-control me-2" @bind-Value="CreateModel.Name" placeholder="Title"></InputText>
+					<ValidationMessage For="@(()=> CreateModel.Name)" />
+				</div>
+				<button type="submit" class="btn btn">Create</button>
+			</EditForm>
+		}
+		@if (Page.Equals(PageType.Update))
+		{
+			<EditForm Model="@UpdateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<div class="mb-3">
+					<InputSelect @bind-Value="UpdateModel.Id" class="form-control mb-3">
+						<option value=0>Choose genre to update..</option>
+						@foreach (var genre in Genres)
+						{
+							<option value="@genre.Id">
+								@genre.Name
+							</option>
+						}
+					</InputSelect>
+					<ValidationMessage For="@(()=> UpdateModel.Id)" />
+				</div>
+				<div class="mb-3">
+					<InputText id="name" class="form-control me-2" @bind-Value="UpdateModel.Name" placeholder="New name.."></InputText>
+					<ValidationMessage For="@(()=> UpdateModel.Name)" />
+				</div>
+				<button type="submit" class="btn btn">Update</button>
+			</EditForm>
+		}
+	</div>
+</div>
+@code {
+	[Parameter] public EventCallback<string> OnChange { get; set; }
+	[Parameter] public string Page { get; set; } = string.Empty;
+	[Parameter] public GenreDto Model { get; set; } = new();
+	public CreateGenreDto CreateModel { get; set; } = new();
+	public UpdateGenreDto UpdateModel { get; set; } = new();
+	public List<GenreDto> Genres { get; set; } = new();
+	public List<FilmDto> Films { get; set; } = new();
+
+	protected override async Task OnInitializedAsync()
+	{
+		Genres = await AdminService.ReadAsync<GenreDto>("genres");
+		Films = await AdminService.ReadAsync<FilmDto>("films");
+	}
+	private async Task SubmitChanges()
+	{
+		try
+		{
+			switch (Page)
+			{
+				case "Create":
+					await AdminService.CreateAsync<CreateGenreDto>("genres", CreateModel);
+					await OnChange.InvokeAsync($"Film '{CreateModel.Name}'has been added");
+					break;
+				case "Update":
+					await AdminService.UpdateAsync<UpdateGenreDto>($"genres/{UpdateModel.Id}", UpdateModel);
+					await OnChange.InvokeAsync($"Film '{UpdateModel.Name}' has been updated.");
+
+					break;
+				case "Delete":
+					await AdminService.DeleteAsync<GenreDto>($"genres/{Model.Id}");
+					await OnChange.InvokeAsync($"Film '{Model.Name}' has been deleted.");
+					break;
+			}
+		}
+		catch
+		{
+			await OnChange.InvokeAsync($"Could not submit the changes to the film '{CreateModel.Name}'.");
+		}
+	}
+}

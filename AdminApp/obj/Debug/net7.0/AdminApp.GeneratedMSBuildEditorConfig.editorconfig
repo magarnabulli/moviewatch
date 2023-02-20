@@ -1,0 +1,89 @@
+is_global = true
+build_property.TargetFramework = net7.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AdminApp
+build_property.RootNamespace = AdminApp
+build_property.ProjectDir = C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\
+build_property.RazorLangVersion = 7.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/App.razor]
+build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/DirectorsPages/ChangeDirector.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzUGFnZXNcQ2hhbmdlRGlyZWN0b3IucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/DirectorsPages/DirectorsIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzUGFnZXNcRGlyZWN0b3JzSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/DirectorsPages/DirectorsPortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRGlyZWN0b3JzUGFnZXNcRGlyZWN0b3JzUG9ydGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/FilmsPages/ChangeFilm.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsbXNQYWdlc1xDaGFuZ2VGaWxtLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/FilmsPages/FilmsIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsbXNQYWdlc1xGaWxtc0luZGV4LnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/FilmsPages/FilmsPortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRmlsbXNQYWdlc1xGaWxtc1BvcnRhbC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/GenresPages/ChangeGenre.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmVzUGFnZXNcQ2hhbmdlR2VucmUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/GenresPages/GenresIndex.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmVzUGFnZXNcR2VucmVzSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/GenresPages/GenresPortal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcR2VucmVzUGFnZXNcR2VucmVzUG9ydGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/Index.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXgucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/Portal.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUG9ydGFsLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Shared/SurveyPrompt.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXFN1cnZleVByb21wdC5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/_Imports.razor]
+build_metadata.AdditionalFiles.TargetPath = X0ltcG9ydHMucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Shared/MainLayout.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE1haW5MYXlvdXQucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-zujhobznm8
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Shared/NavMenu.razor]
+build_metadata.AdditionalFiles.TargetPath = U2hhcmVkXE5hdk1lbnUucmF6b3I=
+build_metadata.AdditionalFiles.CssScope = b-0nhxlgxjyo
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/AdminApp/Pages/_Host.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX0hvc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 

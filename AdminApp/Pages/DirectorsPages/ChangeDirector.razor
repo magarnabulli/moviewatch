@@ -1,0 +1,90 @@
+﻿@inject IAdminService AdminService
+<h3>Edit Directors</h3>
+<div class="d-xl justify-content-center">
+	<div class="mb-3">
+		@if (Page.Equals(PageType.Delete))
+		{
+			<EditForm Model="@Model" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<InputText id="name" class="form-control me-2" @bind-Value="Model.Name" disabled placeholder="Name"></InputText>
+				<ValidationMessage For="@(()=> Model.Name)" />
+				<button type="submit" class="btn btn">Delete</button>
+			</EditForm>
+		}
+		@if (Page.Equals(PageType.Create))
+		{
+			<EditForm Model="@CreateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<div class="mb-3">
+					<InputText id="name" class="form-control me-2" @bind-Value="CreateModel.Name" placeholder="Name.."></InputText>
+					<ValidationMessage For="@(()=> CreateModel.Name)" />
+				</div>
+				<button type="submit" class="btn btn">Create</button>
+			</EditForm>
+		}
+		@if (Page.Equals(PageType.Update))
+		{
+			<EditForm Model="@UpdateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<div class="mb-3">
+					<InputSelect @bind-Value="UpdateModel.Id" class="form-control mb-3">
+						<option value=0>Choose director to update..</option>
+						@foreach (var director in Directors)
+						{
+							<option value="@director.Id">
+								@director.Name
+							</option>
+						}
+					</InputSelect>
+					<ValidationMessage For="@(()=> UpdateModel.Id)" />
+				</div>
+				<div class="mb-3">
+					<InputText id="name" class="form-control me-2" @bind-Value="UpdateModel.Name" placeholder="Change Name.."></InputText>
+					<ValidationMessage For="@(()=> UpdateModel.Name)" />
+				</div>
+				<button type="submit" class="btn btn">Update</button>
+			</EditForm>
+		}
+	</div>
+
+</div>
+
+@code {
+	[Parameter] public EventCallback<string> OnChange { get; set; }
+	[Parameter] public string Page { get; set; } = string.Empty;
+	[Parameter] public DirectorDto Model { get; set; } = new();
+	public CreateDirectorDto CreateModel { get; set; } = new();
+	public UpdateDirectorDto UpdateModel { get; set; } = new();
+	public List<FilmDto> Films { get; set; } = new();
+	public List<DirectorDto> Directors { get; set; } = new();
+	protected override async Task OnInitializedAsync()
+	{
+		Directors = await AdminService.ReadAsync<DirectorDto>("directors");
+		Films = await AdminService.ReadAsync<FilmDto>("films");
+	}
+	private async Task SubmitChanges()
+	{
+		try
+		{
+			switch (Page)
+			{
+				case "Create":
+					await AdminService.CreateAsync<CreateDirectorDto>("directors", CreateModel);
+					await OnChange.InvokeAsync($"Film '{CreateModel.Name}'has been added");
+					break;
+				case "Update":
+					await AdminService.UpdateAsync<UpdateDirectorDto>($"directors/{UpdateModel.Id}", UpdateModel);
+					await OnChange.InvokeAsync($"Film '{UpdateModel.Name}' has been updated.");
+
+					break;
+				case "Delete":
+					await AdminService.DeleteAsync<DirectorDto>($"directors/{Model.Id}");
+					await OnChange.InvokeAsync($"Film '{Model.Name}' has been deleted.");
+					break;
+			}
+		}
+		catch
+		{
+			await OnChange.InvokeAsync($"Could not submit the changes to the film '{CreateModel.Name}'.");
+		}
+	}
+
+
+}

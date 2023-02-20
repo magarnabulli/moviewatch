@@ -1,0 +1,75 @@
+﻿@inject IAdminService AdminService
+
+<div>
+	<iframe width="560" height="315" src="https://www.youtube.com/embed/3KVp0YjDDfw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+</div>
+<div class="d-flex me-1">
+	<a href="/" class="btn btn-outline-secondary rounded-0 me-1">Home</a>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Index)">View</button>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Create)">Create</button>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Update)">Update</button>
+</div>
+@if (!string.IsNullOrEmpty(Alert))
+{
+	<div class="d-flex">
+		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+			<strong>@Alert</strong>
+			<button type="button" @onclick="CloseAlert" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+		</div>
+	</div>
+}
+@if (Navigation == PageType.Index)
+{
+	<FilmsIndex OnClick="OnClick" Model="Model"></FilmsIndex>
+}
+@if (Navigation == PageType.Create)
+{
+	<ChangeFilm Page="@Navigation" OnChange="OnChange"></ChangeFilm>
+}
+@if (Navigation == PageType.Delete || Navigation == PageType.Update)
+{
+	<ChangeFilm Page="@Navigation" OnChange="OnChange" Model="Film"></ChangeFilm>
+}
+
+@code {
+	public List<FilmDto> Model { get; set; } = new();
+	public string Alert { get; set; } = string.Empty;
+	public string Navigation { get; set; } = string.Empty;
+	public FilmDto Film { get; set; } = new();
+
+
+	void ChangePageType(string pageType) => Navigation = pageType;
+	void CloseAlert() => Alert = string.Empty;
+
+	protected override async Task OnInitializedAsync()
+	{
+		Alert = string.Empty;
+		Model = await AdminService.ReadAsync<FilmDto>("films");
+		//film = await AdminService.ReadOneAsync<FilmDto>("films/1");
+		//await AdminService.CreateAsync<CreateFilmDto>("films", new CreateFilmDto
+		//{ Title = "Movietest", Description = "very nice", DirectorId = 2, Realeased = new DateTime(2022,02,10), FilmUrl = "www.youtube.com" });
+		//await AdminService.UpdateAsync<UpdateFilmDto>("films/1015", new UpdateFilmDto { Id = 1016,Title = "dis should", Description = "work", DirectorId=3, FilmUrl="www.youtube.com", Realeased = new DateTime(2022,10,09)});
+		//await AdminService.DeleteAsync<FilmDto>("films/1016");
+	}
+	async Task OnClick(ClickModel model)
+	{
+		if (model.PageType.Equals(PageType.Update) || model.PageType.Equals(PageType.Delete))
+		{
+			Film = await AdminService.ReadOneAsync<FilmDto>($"films/{model.Id}") ?? new();
+			ChangePageType(model.PageType);
+		}
+	}
+	async Task OnChange(string alert)
+	{
+		try
+		{
+			Alert = alert;
+			Model = await AdminService.ReadAsync<FilmDto>("films");
+			ChangePageType(PageType.Index);
+		}
+		catch
+		{
+			Alert = "Could not handle the film.";
+		}
+	}
+}

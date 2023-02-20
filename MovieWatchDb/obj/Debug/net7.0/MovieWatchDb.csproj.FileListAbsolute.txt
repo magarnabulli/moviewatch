@@ -1,0 +1,14 @@
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\bin\Debug\net7.0\MovieWatchDb.deps.json
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\bin\Debug\net7.0\MovieWatchDb.runtimeconfig.json
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\bin\Debug\net7.0\MovieWatchDb.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\bin\Debug\net7.0\MovieWatchDb.pdb
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.csproj.AssemblyReference.cache
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.AssemblyInfoInputs.cache
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.AssemblyInfo.cs
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.csproj.CoreCompileInputs.cache
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\refint\MovieWatchDb.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.pdb
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\MovieWatchDb.genruntimeconfig.cache
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchDb\obj\Debug\net7.0\ref\MovieWatchDb.dll
