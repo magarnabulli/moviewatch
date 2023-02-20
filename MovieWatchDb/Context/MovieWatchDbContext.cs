@@ -12,16 +12,16 @@ namespace MovieWatchDb.Context
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
 		{
-			base.OnModelCreating(modelBuilder);
+
 			modelBuilder.Entity<FilmGenre>().HasKey(fg => new { fg.FilmId, fg.GenreId });
-			modelBuilder.Entity<Film>().HasOne(f => f.Director).WithMany(d => d.Films).HasForeignKey(f => f.DirectorId);
+			modelBuilder.Entity<Film>(entity =>
+			{
+				entity.HasOne(f => f.Director).WithMany(d => d.Films).HasForeignKey(f => f.DirectorId);
+				entity.HasMany(d => d.FilmGenres).WithMany(p => p.FilmGenres).UsingEntity<FilmGenre>().ToTable("FilmGenres");
+			});
 			modelBuilder.Entity<Director>();
 			modelBuilder.Entity<Genre>();
-			SeedData(modelBuilder);
-		}
-		private void SeedData(ModelBuilder builder)
-		{
-			builder.Entity<Film>().HasData(new Film
+			modelBuilder.Entity<Film>().HasData(new Film
 			{
 				Id= 1,
 				Title="Blue Velvet",
@@ -132,7 +132,7 @@ namespace MovieWatchDb.Context
 				FilmUrl = "https://www.youtube.com/watch?v=WJC1qciW_3k",
 				ImgUrl="/images/MyNeighbourTotoro.jpg"
 			});
-			builder.Entity<Director>().HasData(new Director
+			modelBuilder.Entity<Director>().HasData(new Director
 			{
 				Id= 1,
 				Name = "David Lynch"
@@ -146,18 +146,21 @@ namespace MovieWatchDb.Context
 				Name= "Steven Soderbergh"
 			}, new Director
 			{
-				Id=4, Name="Errol Morris"
+				Id=4,
+				Name="Errol Morris"
 			}, new Director
 			{
 				Id=5,
 				Name="Hayao Miyazaki"
 			});
-			builder.Entity<Genre>().HasData(new Genre
+			modelBuilder.Entity<Genre>().HasData(new Genre
 			{
-				 Id=1, Name= "Action"
-			},new Genre
+				Id=1,
+				Name= "Action"
+			}, new Genre
 			{
-				Id=2, Name="Mystery"
+				Id=2,
+				Name="Mystery"
 			}, new Genre
 			{
 				Id=3,
@@ -199,12 +202,14 @@ namespace MovieWatchDb.Context
 				Id=12,
 				Name="Animation"
 			});
-			builder.Entity<FilmGenre>().HasData(new FilmGenre
+			modelBuilder.Entity<FilmGenre>().HasData(new FilmGenre
 			{
-				 FilmId=3, GenreId=1
+				FilmId=3,
+				GenreId=1
 			}, new FilmGenre
 			{
-				FilmId=1, GenreId=2
+				FilmId=1,
+				GenreId=2
 			}, new FilmGenre
 			{
 				FilmId=5,
