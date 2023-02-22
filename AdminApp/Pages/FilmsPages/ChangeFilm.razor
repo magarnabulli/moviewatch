@@ -196,9 +196,10 @@
 	private async Task FileInput(InputFileChangeEventArgs e)
 	{
 		var file = e.File;
-		FileName = "/images/" + file.Name.ToString();
+		FileName = "/images/" + file.Name;
 		CreateModel.ImgUrl = FileName;
 		UpdateModel.ImgUrl = FileName;
+		
 		var path = Path.Combine(environment.WebRootPath, "images", file.Name);
 		await using FileStream fs = new(path, FileMode.Create);
 		await file.OpenReadStream(maxFileSize).CopyToAsync(fs);

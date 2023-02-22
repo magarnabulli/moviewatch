@@ -1,6 +1,6 @@
 ﻿@page "/"
 @inject IMovieWatchService Service
-@inject IWebAssemblyHostEnvironment environment
+
 <PageTitle>MovieWatch</PageTitle>
 
 <h1>M O V I E  W A T C H</h1>
@@ -9,7 +9,7 @@
 	{
 
 		<div class="card me-4 mb-4 rounded-0" style="width: 18rem;">
-			<img src="@item.ImgUrl.ToString()" class="card-img-top rounded-0" alt="@item.ImgUrl">
+			<img src="@item.ImgUrl" class="card-img-top rounded-0" alt="@item.ImgUrl">
 			<div class="card-body">
 				<h5 class="card-title">@item.Title</h5>
 				<p class="card-text">@item.Description?.Truncate(50)</p>
@@ -19,19 +19,8 @@
 	}
 
 </div>
-<ul>
-	@foreach (var item in Genres)
-	{
-		<li>@item.Name</li>
-	}
-</ul>
-<ul>
-	@foreach (var item in Directors)
-	{
-		<li>@item.Name</li>
-	}
-</ul>
 @code {
+	public int Id { get; set; }
 	public List<FilmDto> Films { get; set; } = new();
 	public List<GenreDto> Genres { get; set; } = new();
 	public List<DirectorDto> Directors { get; set; } = new();

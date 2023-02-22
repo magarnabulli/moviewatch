@@ -57,44 +57,8 @@
       "PackagePath": "staticwebassets\\favicon.png"
     },
     {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\03371.01.013018.02.jpg",
-      "PackagePath": "staticwebassets\\images\\03371.01.013018.02.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\1024-chad.png",
-      "PackagePath": "staticwebassets\\images\\1024-chad.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\1114-pepehappythumbsup.png",
-      "PackagePath": "staticwebassets\\images\\1114-pepehappythumbsup.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\2174-pepe-cool.png",
-      "PackagePath": "staticwebassets\\images\\2174-pepe-cool.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\2230-poggies-peepo.png",
-      "PackagePath": "staticwebassets\\images\\2230-poggies-peepo.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\2368-peepoenter.png",
-      "PackagePath": "staticwebassets\\images\\2368-peepoenter.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\3264-peepostonks.png",
-      "PackagePath": "staticwebassets\\images\\3264-peepostonks.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\6r78z5mkh8p91.jpg",
-      "PackagePath": "staticwebassets\\images\\6r78z5mkh8p91.jpg"
-    },
-    {
       "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\BlueVelvet.jpg",
       "PackagePath": "staticwebassets\\images\\BlueVelvet.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\DSC_0363.JPG",
-      "PackagePath": "staticwebassets\\images\\DSC_0363.JPG"
     },
     {
       "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\Dune.jpg",
@@ -111,10 +75,6 @@
     {
       "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\HowlsMovingCastle.jpg",
       "PackagePath": "staticwebassets\\images\\HowlsMovingCastle.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\IMG_20160803_021640.jpg",
-      "PackagePath": "staticwebassets\\images\\IMG_20160803_021640.jpg"
     },
     {
       "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\MyNeighbourTotoro.jpg",
@@ -147,22 +107,6 @@
     {
       "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\WolfOfWallStreet.jpg",
       "PackagePath": "staticwebassets\\images\\WolfOfWallStreet.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\ad74357e525bc4e827f1230b25cbe1b4.jpg",
-      "PackagePath": "staticwebassets\\images\\ad74357e525bc4e827f1230b25cbe1b4.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\helo.jpg",
-      "PackagePath": "staticwebassets\\images\\helo.jpg"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\images.png",
-      "PackagePath": "staticwebassets\\images\\images.png"
-    },
-    {
-      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\AdminApp\\wwwroot\\images\\testing.jpg",
-      "PackagePath": "staticwebassets\\images\\testing.jpg"
     },
     {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.AdminApp.Microsoft.AspNetCore.StaticWebAssets.props",
