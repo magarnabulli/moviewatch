@@ -64,6 +64,7 @@ namespace MovieWatchAPI.Controllers
 		{
 			try
 			{
+				dto.ImgUrl = Convert.ToString(dto.ImgUrl);
 				if (dto == null) return Results.BadRequest();
 				var film = await db.CreateAsync<Film, CreateFilmDto>(dto);
 				if (await db.SaveChangesAsync() == false) return Results.BadRequest();
@@ -80,6 +81,7 @@ namespace MovieWatchAPI.Controllers
 		{
 			try
 			{
+				dto.ImgUrl = Convert.ToString(dto.ImgUrl);
 				if (dto == null) return Results.BadRequest("No movie provided");
 				if (!id.Equals(dto.Id)) return Results.BadRequest("Incorrect movie Id");
 				var isFound = await db.AnyAsync<Film>(i => i.Id == dto.Id);

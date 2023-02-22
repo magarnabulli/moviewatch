@@ -74,7 +74,6 @@ public class AdminService : IAdminService
 		}
 		catch (Exception)
 		{
-
 			throw;
 		}
 	}
@@ -86,8 +85,6 @@ public class AdminService : IAdminService
 			request.Content= JsonContent.Create(dto);
 			using var response = await http.Client.SendAsync(request);
 			response.EnsureSuccessStatusCode();
-
-			
 		}
 		catch (Exception)
 		{

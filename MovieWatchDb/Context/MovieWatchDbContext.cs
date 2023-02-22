@@ -41,10 +41,11 @@ namespace MovieWatchDb.Context
 				DirectorId=1,
 				FilmUrl = "https://www.youtube.com/watch?v=7WAzFWu2tVw",
 				ImgUrl="/images/Eraserhead.jpg"
+				 
 			}, new Film
 			{
 				Id= 3,
-				Title="Eraserhead",
+				Title="Dune",
 				Realeased = new DateTime(1984, 06, 01),
 				Free=false,
 				Description="A Duke's son leads desert warriors against the galactic emperor and his father's evil nemesis to free their desert world from the emperor's rule.",

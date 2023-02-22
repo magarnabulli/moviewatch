@@ -9,6 +9,7 @@
 			<th>Free</th>
 			<th>Genres</th>
 			<th>Delete</th>
+			<th>Update</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -22,13 +23,14 @@
 				<td>@(item.Free ? "Free" : "")</td>
 				<td>
 					@foreach (var genre in item.FilmGenres)
-					{						
-							<li>@genre.Name</li>						
+					{
+						<li>@genre.Name</li>
 					}
 				</td>
 				<td>
 					<div class="d-flex me-1">
 						<button class="btn btn-outline-danger rounded-0" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, item.Id)))">Delete</button>
+						<button class="btn btn-outline-danger rounded-0" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Update, item.Id)))">Update</button>
 					</div>
 				</td>
 			</tr>
@@ -37,7 +39,7 @@
 </table>
 
 @code {
-
+	[Parameter] public UpdateFilmDto UpdateModel { get; set; } = new();
 	[Parameter] public List<FilmDto> Model { get; set; } = new();//för att kunna prenumerera på eventet och skicka in modellen till andra komponenten behövs [Parameter] attributet och vara public!!
 	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
 	[Parameter] public string Page { get; set; } = string.Empty;

@@ -1,5 +1,3 @@
-
-
 using Common.ClientServices;
 
 var builder = WebAssemblyHostBuilder.CreateDefault(args);

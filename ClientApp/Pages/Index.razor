@@ -1,5 +1,6 @@
 ﻿@page "/"
 @inject IMovieWatchService Service
+@inject IWebAssemblyHostEnvironment environment
 <PageTitle>MovieWatch</PageTitle>
 
 <h1>M O V I E  W A T C H</h1>
@@ -8,7 +9,7 @@
 	{
 
 		<div class="card me-4 mb-4 rounded-0" style="width: 18rem;">
-			<img src="..." class="card-img-top rounded-0" alt="...">
+			<img src="@item.ImgUrl.ToString()" class="card-img-top rounded-0" alt="@item.ImgUrl">
 			<div class="card-body">
 				<h5 class="card-title">@item.Title</h5>
 				<p class="card-text">@item.Description?.Truncate(50)</p>
@@ -34,10 +35,13 @@
 	public List<FilmDto> Films { get; set; } = new();
 	public List<GenreDto> Genres { get; set; } = new();
 	public List<DirectorDto> Directors { get; set; } = new();
+	private long maxFileSize = 1024 * 1024 * 3;
+	string FileName { get; set; } = null!;
 	protected override async Task OnInitializedAsync()
 	{
 		Films = await Service.ReadFilmsAsync(false);
 		Genres = await Service.ReadGenresAsync();
 		Directors = await Service.ReadDirectorsAsync();
 	}
+
 }

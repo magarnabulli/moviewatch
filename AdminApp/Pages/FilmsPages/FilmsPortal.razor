@@ -7,7 +7,6 @@
 	<a href="/" class="btn btn-outline-secondary rounded-0 me-1">Home</a>
 	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Index)">View</button>
 	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Create)">Create</button>
-	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Update)">Update</button>
 </div>
 @if (!string.IsNullOrEmpty(Alert))
 {
@@ -24,11 +23,11 @@
 }
 @if (Navigation == PageType.Create)
 {
-	<ChangeFilm Page="@Navigation" OnChange="OnChange"></ChangeFilm>
+	<ChangeFilm Page="@Navigation" OnChangeAlert="OnChangeAlert"></ChangeFilm>
 }
 @if (Navigation == PageType.Delete || Navigation == PageType.Update)
 {
-	<ChangeFilm Page="@Navigation" OnChange="OnChange" Model="Film"></ChangeFilm>
+	<ChangeFilm Page="@Navigation" OnChangeAlert="OnChangeAlert" Model="Film"></ChangeFilm>
 }
 
 @code {
@@ -59,7 +58,7 @@
 			ChangePageType(model.PageType);
 		}
 	}
-	async Task OnChange(string alert)
+	async Task OnChangeAlert(string alert)
 	{
 		try
 		{
