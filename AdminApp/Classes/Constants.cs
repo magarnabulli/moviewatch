@@ -1,5 +1,4 @@
-﻿using AdminApp.Classes;
-namespace AdminApp.Classes
+﻿namespace AdminApp.Classes
 {
 	public static class Routes
 	{

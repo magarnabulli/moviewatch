@@ -1,0 +1,26 @@
+﻿@page "/Moviescreen/{Id:int}"
+@inject IMovieWatchService Service
+
+<div>
+	<a href="tofilm/@FilmModel.Id" class="btn btn-primary rounded-0">
+	<i class="io io-arrow-left"></i>
+	<span class="vertical-align">Back to film</span>
+	</a>
+	@if(FilmModel.FilmUrl != null)
+	{
+		<div class="video-player" >
+			<iframe width="700" height="300" src="@FilmModel.FilmUrl" frameborder="0" 
+			allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+		<h3 class="mt-3">@FilmModel.Title</h3>
+		<p>@FilmModel.Description</p>
+	}
+</div>
+@code {
+	[Parameter] public int Id{ get; set; }
+	public FilmDto FilmModel { get; set; } = new();
+	protected override async Task OnInitializedAsync()
+	{
+		FilmModel = await Service.ReadFilmAsync(Id);
+	}
+}

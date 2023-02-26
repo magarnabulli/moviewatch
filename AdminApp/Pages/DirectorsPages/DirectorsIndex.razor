@@ -1,9 +1,10 @@
 ﻿<h3>Directors</h3>
-<table class="table m-1">
+<table class="table table-bordered m-2">
 	<thead>
 		<tr>
 			<th>Name</th>
-			<th>Films</th>
+			<th>Directors</th>
+			<th>Edit</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -19,7 +20,8 @@
 				</td>
 				<td>
 					<div class="d-flex me-1">
-						<button class="btn btnbtn-outline-danger rounded-0" @onclick="@(()=> OnClick.InvokeAsync(new ClickModel(PageType.Delete, item.Id)))">Delete</button>
+						<button class="btn btn btn-outline-danger rounded-2 m-1" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, item.Id)))">Delete</button>
+						<button class="btn btn btn-outline-primary rounded-2 m-1" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Update, item.Id)))">Update</button>
 					</div>
 				</td>
 			</tr>
@@ -28,7 +30,7 @@
 </table>
 
 @code {
-	[Parameter] public List<DirectorDto> Model { get; set; } = new();
+	[Parameter] public List<DirectorInfoDto> Model { get; set; } = new();
 	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
 	[Parameter] public string Page { get; set; } = string.Empty;
 }

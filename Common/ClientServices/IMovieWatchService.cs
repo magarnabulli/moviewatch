@@ -2,11 +2,12 @@
 {
 	public interface IMovieWatchService
 	{
-		Task<DirectorDto> ReadDirectorAsync<DirectorDto>(int id);
-		Task<List<DirectorDto>> ReadDirectorsAsync();
-		Task<FilmDto> ReadFilmAsync<FilmDto>(int id);
-		public Task<List<FilmDto>> ReadFilmsAsync(bool free);
-		Task<GenreDto> ReadGenreAsync<GenreDto>(int id);
-		Task<List<GenreDto>> ReadGenresAsync();
+		Task<DirectorInfoDto> ReadDirectorAsync(int id);
+		Task<List<DirectorInfoDto>> ReadDirectorsAsync();
+		Task<FilmInfoDto> ReadFilmAsync(int id);
+		Task<List<FilmGenreDto>> ReadFilmGenresAsync();
+		public Task<List<FilmInfoDto>> ReadFilmsAsync(bool free);
+		Task<GenreInfoDto> ReadGenreAsync(int id);
+		Task<List<GenreInfoDto>> ReadGenresAsync();
 	}
 }

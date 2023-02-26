@@ -1,0 +1,75 @@
+﻿@page "/ToFilm/{Id:int}"
+@inject IMovieWatchService Service
+@inject NavigationManager navman
+
+<div class="d-flex flex-wrap justify-content-between mb-3">
+	<section>
+		<h3>@FilmModel.Title</h3>
+		<h5>@FilmModel.Description</h5>
+		<a href="moviescreen/@FilmModel.Id" class="btn-dark">watch movie</a>
+		<a href="/" class="btn btn-primary rounded-0">
+			<i class="io io-arrow-left"></i>
+			<span class="vertical-align">Back to films</span>
+		</a>
+		<div>
+			@if (FilmModel.SimilarFilms != null)
+			{
+				@foreach (var film in FilmModel.SimilarFilms)
+				{
+					<li>
+						<a href="" @onclick="(()=> Refresh(film.Film.Id))" @onclick:preventDefault>
+							@film.Film.Title
+						</a>
+					</li>
+				}
+			}
+		</div>
+		<div>
+			@foreach (var item in FilmsGenres)
+			{
+				<li>
+					<a href="genre/@item.Id" class="btn-dark">
+						@item.Name
+					</a>
+				</li>
+			}
+		</div>
+	</section>
+</div>
+
+@code {
+	[Parameter] public int Id { get; set; } = new();
+	public FilmInfoDto FilmModel { get; set; } = new();
+	public List<GenreInfoDto> Genres { get; set; } = new();
+	public List<FilmInfoDto> Films { get; set; } = new();
+	public List<FilmGenreDto> FilmGenres { get; set; } = new();
+	public string Navigation { get; set; } = string.Empty;
+	public List<GenreDto> FilmsGenres { get; set; } = new();
+	void Refresh(int id)
+	{
+		navman.NavigateTo($"tofilm/{id}", true);
+	}
+	void Refresh(string href) => Navigation = href;
+	protected override async Task OnInitializedAsync()
+	{
+		FilmModel = await Service.ReadFilmAsync(Id);
+		Genres = await Service.ReadGenresAsync();
+		Films = await Service.ReadFilmsAsync(false);
+		FilmGenres = await Service.ReadFilmGenresAsync();
+		GetGenres();
+	}
+	public async Task<List<GenreDto>> GetGenres()
+	{
+		foreach (var filmsgenre in FilmModel.Genres)
+		{
+			foreach (var genre in Genres)
+			{
+				if (filmsgenre.Id == genre.Id)
+				{
+					FilmsGenres.Add(genre);
+				}
+			}
+		}
+		return FilmsGenres;
+	}
+}

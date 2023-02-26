@@ -71,7 +71,7 @@ main[b-zujhobznm8] {
 }
 /* _content/AdminApp/Shared/NavMenu.razor.rz.scp.css */
 .navbar-toggler[b-0nhxlgxjyo] {
-    background-color: rgba(255, 255, 255, 0.1);
+    background-color: rgb(255, 255, 255);
 }
 
 .top-row[b-0nhxlgxjyo] {
@@ -81,6 +81,7 @@ main[b-zujhobznm8] {
 
 .navbar-brand[b-0nhxlgxjyo] {
     font-size: 1.1rem;
+    font-family:monospace;
 }
 
 .oi[b-0nhxlgxjyo] {
@@ -91,7 +92,8 @@ main[b-zujhobznm8] {
 }
 
 .nav-item[b-0nhxlgxjyo] {
-    font-size: 0.9rem;
+    font-family: monospace;
+    font-size: 1rem;
     padding-bottom: 0.5rem;
 }
 
@@ -104,7 +106,7 @@ main[b-zujhobznm8] {
     }
 
     .nav-item[b-0nhxlgxjyo]  a {
-        color: #d7d7d7;
+        color: white;
         border-radius: 4px;
         height: 3rem;
         display: flex;

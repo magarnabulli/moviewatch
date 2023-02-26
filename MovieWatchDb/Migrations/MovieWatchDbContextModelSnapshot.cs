@@ -63,6 +63,11 @@ namespace MovieWatchDb.Migrations
                         {
                             Id = 5,
                             Name = "Hayao Miyazaki"
+                        },
+                        new
+                        {
+                            Id = 6,
+                            Name = "Gore Verbinski"
                         });
                 });
 
@@ -92,7 +97,7 @@ namespace MovieWatchDb.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<DateTime>("Realeased")
+                    b.Property<DateTime>("Released")
                         .HasColumnType("datetime2");
 
                     b.Property<string>("Title")
@@ -111,10 +116,10 @@ namespace MovieWatchDb.Migrations
                             Id = 1,
                             Description = "The discovery of a severed human ear found in a field leads a young man on an investigation related to a beautiful, mysterious nightclub singer and a group of psychopathic criminals who have kidnapped her child.",
                             DirectorId = 1,
-                            FilmUrl = "https://www.youtube.com/watch?v=6Q6gQbrEKyU",
+                            FilmUrl = "https://www.youtube-nocookie.com/embed/6Q6gQbrEKyU",
                             Free = true,
                             ImgUrl = "/images/BlueVelvet.jpg",
-                            Realeased = new DateTime(1986, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(1986, 4, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Blue Velvet"
                         },
                         new
@@ -122,10 +127,10 @@ namespace MovieWatchDb.Migrations
                             Id = 2,
                             Description = "Henry Spencer tries to survive his industrial environment, his angry girlfriend, and the unbearable screams of his newly born mutant child.",
                             DirectorId = 1,
-                            FilmUrl = "https://www.youtube.com/watch?v=7WAzFWu2tVw",
+                            FilmUrl = "https://www.youtube.com/embed/7WAzFWu2tVw",
                             Free = false,
                             ImgUrl = "/images/Eraserhead.jpg",
-                            Realeased = new DateTime(1977, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(1977, 3, 13, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Eraserhead"
                         },
                         new
@@ -133,21 +138,21 @@ namespace MovieWatchDb.Migrations
                             Id = 3,
                             Description = "A Duke's son leads desert warriors against the galactic emperor and his father's evil nemesis to free their desert world from the emperor's rule.",
                             DirectorId = 1,
-                            FilmUrl = "https://www.youtube.com/watch?v=KwPTIEWTYEI",
+                            FilmUrl = "https://www.youtube.com/embed/KwPTIEWTYEI",
                             Free = false,
                             ImgUrl = "/images/Dune.jpg",
-                            Realeased = new DateTime(1984, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            Title = "Eraserhead"
+                            Released = new DateTime(1984, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Dune"
                         },
                         new
                         {
                             Id = 4,
                             Description = "Based on the true story of Jordan Belfort, from his rise to a wealthy stock-broker living the high life to his fall involving crime, corruption and the federal government.",
                             DirectorId = 2,
-                            FilmUrl = "https://www.youtube.com/watch?v=iszwuX1AK6A",
+                            FilmUrl = "https://www.youtube.com/embed/iszwuX1AK6A",
                             Free = true,
                             ImgUrl = "/images/WolfOfWallStreet.jpg",
-                            Realeased = new DateTime(2013, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(2013, 8, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "The Wolf of Wallstreet"
                         },
                         new
@@ -155,10 +160,10 @@ namespace MovieWatchDb.Migrations
                             Id = 5,
                             Description = "In 1954, a U.S. Marshal investigates the disappearance of a murderer who escaped from a hospital for the criminally insane.",
                             DirectorId = 2,
-                            FilmUrl = "https://www.youtube.com/watch?v=5iaYLCiq5RM",
+                            FilmUrl = "https://www.youtube.com/embed/5iaYLCiq5RM",
                             Free = false,
                             ImgUrl = "/images/ShutterIsland.jpg",
-                            Realeased = new DateTime(2010, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(2010, 11, 26, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Shutter Island"
                         },
                         new
@@ -166,10 +171,10 @@ namespace MovieWatchDb.Migrations
                             Id = 6,
                             Description = "Danny Ocean and his ten accomplices plan to rob three Las Vegas casinos simultaneously.",
                             DirectorId = 3,
-                            FilmUrl = "https://www.youtube.com/watch?v=imm6OR605UI",
+                            FilmUrl = "https://www.youtube.com/embed/imm6OR605UI",
                             Free = true,
                             ImgUrl = "/images/OceansEleven.jpg",
-                            Realeased = new DateTime(2001, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(2001, 1, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Oceans Eleven"
                         },
                         new
@@ -177,10 +182,10 @@ namespace MovieWatchDb.Migrations
                             Id = 7,
                             Description = "A widow investigates an insurance fraud, chasing leads to a pair of Panama City law partners exploiting the world's financial system.",
                             DirectorId = 3,
-                            FilmUrl = "https://www.youtube.com/watch?v=wuBRcfe4bSo",
+                            FilmUrl = "https://www.youtube.com/embed/wuBRcfe4bSo",
                             Free = true,
                             ImgUrl = "/images/TheLaundromat.jpg",
-                            Realeased = new DateTime(2019, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(2019, 4, 15, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "The Laundromat"
                         },
                         new
@@ -188,10 +193,10 @@ namespace MovieWatchDb.Migrations
                             Id = 8,
                             Description = "An exploration of the careers of four unrelated professionals: a lion tamer, a robotics expert, a topiary gardener, and a naked mole rat specialist.",
                             DirectorId = 4,
-                            FilmUrl = "https://www.youtube.com/watch?v=n9gFKHAFG94",
+                            FilmUrl = "https://www.youtube.com/embed/n9gFKHAFG94",
                             Free = false,
                             ImgUrl = "/images/FastCheapOutOfControl.jpg",
-                            Realeased = new DateTime(1997, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(1997, 6, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Fast, Cheap & Out of Control"
                         },
                         new
@@ -199,10 +204,10 @@ namespace MovieWatchDb.Migrations
                             Id = 9,
                             Description = "Former United States Secretary of Defense, Donald Rumsfeld, discusses his career in Washington D.C. from his days as a congressman in the early 1960s to planning the invasion of Iraq in 2003",
                             DirectorId = 4,
-                            FilmUrl = "https://www.youtube.com/watch?v=J-NSyMTpkYI",
+                            FilmUrl = "https://www.youtube.com/embed/J-NSyMTpkYI",
                             Free = true,
                             ImgUrl = "/images/UnknownKnown.jpg",
-                            Realeased = new DateTime(2013, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(2013, 9, 4, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "The Unkown Known"
                         },
                         new
@@ -210,10 +215,10 @@ namespace MovieWatchDb.Migrations
                             Id = 10,
                             Description = "During her family's move to the suburbs, a sullen 10-year-old girl wanders into a world ruled by gods, witches, and spirits, and where humans are changed into beasts.",
                             DirectorId = 5,
-                            FilmUrl = "https://www.youtube.com/watch?v=ByXuk9QqQkk",
+                            FilmUrl = "https://www.youtube.com/embed/ByXuk9QqQkk",
                             Free = true,
                             ImgUrl = "/images/SpiritedAway.jpg",
-                            Realeased = new DateTime(2001, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(2001, 3, 18, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "Spirited Away"
                         },
                         new
@@ -221,11 +226,33 @@ namespace MovieWatchDb.Migrations
                             Id = 11,
                             Description = "When two girls move to the country to be near their ailing mother, they have adventures with the wondrous forest spirits who live nearby.",
                             DirectorId = 5,
-                            FilmUrl = "https://www.youtube.com/watch?v=WJC1qciW_3k",
+                            FilmUrl = "https://www.youtube.com/embed/WJC1qciW_3k",
                             Free = false,
                             ImgUrl = "/images/MyNeighbourTotoro.jpg",
-                            Realeased = new DateTime(1988, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Released = new DateTime(1988, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             Title = "My Neighbour Totoro"
+                        },
+                        new
+                        {
+                            Id = 12,
+                            Description = "When an unconfident young woman is cursed with an old body by a spiteful witch, her only chance of breaking the spell lies with a self-indulgent yet insecure young wizard and his companions in his legged, walking castle.",
+                            DirectorId = 5,
+                            FilmUrl = "https://www.youtube.com/embed/iwROgK94zcM",
+                            Free = false,
+                            ImgUrl = "/images/HowlsMovingCastle.jpg",
+                            Released = new DateTime(1988, 7, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Howls Moving Castle"
+                        },
+                        new
+                        {
+                            Id = 14,
+                            Description = "Blacksmith Will Turner teams up with eccentric pirate \"Captain\" Jack Sparrow to save his love, the governor's daughter, from Jack's former pirate allies, who are now undead.",
+                            DirectorId = 6,
+                            FilmUrl = "https://www.youtube.com/embed/-9HT0l9HV4c",
+                            Free = false,
+                            ImgUrl = "/images/PiratesOfTheCaribbeanCurseOfThePearl.jpg",
+                            Released = new DateTime(2003, 6, 22, 0, 0, 0, 0, DateTimeKind.Unspecified),
+                            Title = "Pirates of the Caribbean: The Curse of the Black Pearl"
                         });
                 });
 
@@ -464,6 +491,83 @@ namespace MovieWatchDb.Migrations
                         });
                 });
 
+            modelBuilder.Entity("MovieWatchDb.Entities.SimilarFilms", b =>
+                {
+                    b.Property<int>("FilmId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("SimilarId")
+                        .HasColumnType("int");
+
+                    b.HasKey("FilmId", "SimilarId");
+
+                    b.HasIndex("SimilarId");
+
+                    b.ToTable("SimilarFilms");
+
+                    b.HasData(
+                        new
+                        {
+                            FilmId = 10,
+                            SimilarId = 11
+                        },
+                        new
+                        {
+                            FilmId = 11,
+                            SimilarId = 10
+                        },
+                        new
+                        {
+                            FilmId = 10,
+                            SimilarId = 12
+                        },
+                        new
+                        {
+                            FilmId = 12,
+                            SimilarId = 10
+                        },
+                        new
+                        {
+                            FilmId = 12,
+                            SimilarId = 11
+                        },
+                        new
+                        {
+                            FilmId = 11,
+                            SimilarId = 12
+                        },
+                        new
+                        {
+                            FilmId = 7,
+                            SimilarId = 8
+                        },
+                        new
+                        {
+                            FilmId = 8,
+                            SimilarId = 7
+                        },
+                        new
+                        {
+                            FilmId = 7,
+                            SimilarId = 9
+                        },
+                        new
+                        {
+                            FilmId = 9,
+                            SimilarId = 7
+                        },
+                        new
+                        {
+                            FilmId = 8,
+                            SimilarId = 9
+                        },
+                        new
+                        {
+                            FilmId = 9,
+                            SimilarId = 8
+                        });
+                });
+
             modelBuilder.Entity("MovieWatchDb.Entities.Film", b =>
                 {
                     b.HasOne("MovieWatchDb.Entities.Director", "Director")
@@ -477,22 +581,49 @@ namespace MovieWatchDb.Migrations
 
             modelBuilder.Entity("MovieWatchDb.Entities.FilmGenre", b =>
                 {
-                    b.HasOne("MovieWatchDb.Entities.Film", null)
+                    b.HasOne("MovieWatchDb.Entities.Film", "Film")
                         .WithMany()
                         .HasForeignKey("FilmId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("MovieWatchDb.Entities.Genre", null)
+                    b.HasOne("MovieWatchDb.Entities.Genre", "Genre")
                         .WithMany()
                         .HasForeignKey("GenreId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Film");
+
+                    b.Navigation("Genre");
+                });
+
+            modelBuilder.Entity("MovieWatchDb.Entities.SimilarFilms", b =>
+                {
+                    b.HasOne("MovieWatchDb.Entities.Film", "Film")
+                        .WithMany()
+                        .HasForeignKey("FilmId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("MovieWatchDb.Entities.Film", "Similar")
+                        .WithMany("SimilarFilms")
+                        .HasForeignKey("SimilarId")
+                        .IsRequired();
+
+                    b.Navigation("Film");
+
+                    b.Navigation("Similar");
                 });
 
             modelBuilder.Entity("MovieWatchDb.Entities.Director", b =>
                 {
                     b.Navigation("Films");
+                });
+
+            modelBuilder.Entity("MovieWatchDb.Entities.Film", b =>
+                {
+                    b.Navigation("SimilarFilms");
                 });
 #pragma warning restore 612, 618
         }

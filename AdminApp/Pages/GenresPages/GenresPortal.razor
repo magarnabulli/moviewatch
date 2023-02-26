@@ -1,15 +1,15 @@
 ﻿@inject IAdminService AdminService
 
 <div class="d-flex me-1">
-	<a href="/" class="btn btn-outline-secondary rounded-0 me-1">Home</a>
+	<a href="/" class="btn btn-outline-secondary rounded-0 me-1">Back to homepage</a>
 	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Index)">View</button>
 	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Create)">Create</button>
-	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Update)">Update</button>
+	
 </div>
 @if (!string.IsNullOrEmpty(Alert))
 {
 	<div class="d-flex">
-		<div class="alert alert-danger alert-dismissible fade show" role="alert">
+		<div class="alert alert-dismissible fade show" role="alert">
 			<strong>@Alert</strong>
 			<button type="button" @onclick="CloseAlert" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
 		</div>
@@ -28,7 +28,7 @@
 		<ChangeGenre Page="@Navigation" OnChange="OnChange" Model="Genre"></ChangeGenre>
 	}
 	@code {
-	public List<GenreDto> Model { get; set; } = new();
+	public List<GenreInfoDto> Model { get; set; } = new();
 	public string Alert { get; set; } = string.Empty;
 	public string Navigation { get; set; } = string.Empty;
 	public GenreDto Genre { get; set; } = new();
@@ -39,7 +39,7 @@
 	protected override async Task OnInitializedAsync()
 	{
 		Alert = string.Empty;
-		Model = await AdminService.ReadAsync<GenreDto>("genres");
+		Model = await AdminService.ReadAsync<GenreInfoDto>("genres");
 	}
 	async Task OnClick(ClickModel model)
 	{
@@ -51,15 +51,11 @@
 	}
 	async Task OnChange(string alert)
 	{
-		try
-		{
+
 			Alert = alert;
-			Model = await AdminService.ReadAsync<GenreDto>("genres");
+			Model = await AdminService.ReadAsync<GenreInfoDto>("genres");
 			ChangePageType(PageType.Index);
-		}
-		catch
-		{
-			Alert = "Could not handle the genre.";
-		}
+		
+
 	}
 }

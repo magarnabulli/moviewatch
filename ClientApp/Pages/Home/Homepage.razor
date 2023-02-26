@@ -1,0 +1,40 @@
+﻿@page "/"
+@inject IMovieWatchService Service
+
+<PageTitle>MovieWatch</PageTitle>
+
+<h1>M O V I E  W A T C H</h1>
+<div class="d-flex me-1">
+
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Film)">All films</button>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Genres)">All genres</button>
+	<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Profile)">Log in / Sign up</button>
+</div>
+@if (Navigation == PageType.Film)
+{
+	<FilmsPortal Page="@Navigation" OnChangeAlert="OnChangeAlert"></FilmsPortal>
+}
+@if (Navigation == PageType.Director)
+{
+	<DirectorsPortal Page="@Navigation" OnChangeAlert="OnChangeAlert"></DirectorsPortal>
+}
+@if (Navigation == PageType.Genres)
+{
+	<GenresPortal Page="@Navigation" OnChangeAlert="OnChangeAlert"></GenresPortal>
+}
+@if (Navigation == PageType.Profile)
+{
+	<LoginPortal Page="@Navigation" OnChangeAlert="OnChangeAlert"></LoginPortal>
+}
+
+
+@code {
+	public string Alert { get; set; } = string.Empty;
+	public string Navigation { get; set; } = string.Empty;
+	void ChangePageType(string pageType) => Navigation = pageType;
+	async Task OnChangeAlert()
+	{
+		ChangePageType(PageType.Homepage);
+	}
+}
+

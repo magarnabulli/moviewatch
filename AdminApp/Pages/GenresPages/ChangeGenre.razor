@@ -3,11 +3,11 @@
 	<div class="mb-3">
 		@if (Page.Equals(PageType.Delete))
 		{
-		<EditForm Model="@Model" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
-			<InputText id="name" class="form-control me-2" @bind-Value="Model.Name" disabled placeholder="Genre.."></InputText>
-			<ValidationMessage For="@(()=> Model.Name)"></ValidationMessage>
-			<button type="submit" class="btn btn">Delete</button>
-		</EditForm>
+			<EditForm Model="@Model" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<InputText id="name" class="form-control me-2" @bind-Value="Model.Name" disabled placeholder="Genre.."></InputText>
+				<ValidationMessage For="@(()=> Model.Name)"></ValidationMessage>
+				<button type="submit" class="btn btn">Delete</button>
+			</EditForm>
 		}
 		@if (Page.Equals(PageType.Create))
 		{
@@ -64,17 +64,37 @@
 			switch (Page)
 			{
 				case "Create":
-					await AdminService.CreateAsync<CreateGenreDto>("genres", CreateModel);
-					await OnChange.InvokeAsync($"Film '{CreateModel.Name}'has been added");
+					try
+					{
+						await AdminService.CreateAsync<CreateGenreDto>("genres", CreateModel);
+						await OnChange.InvokeAsync($"Genre: '{CreateModel.Name}'has been added");
+					}
+					catch
+					{
+						await OnChange.InvokeAsync("Could not add the genre. Make sure all fields are filled before submitting!");
+					}
 					break;
 				case "Update":
-					await AdminService.UpdateAsync<UpdateGenreDto>($"genres/{UpdateModel.Id}", UpdateModel);
-					await OnChange.InvokeAsync($"Film '{UpdateModel.Name}' has been updated.");
-
+					try
+					{
+						await AdminService.UpdateAsync<UpdateGenreDto>($"genres/{UpdateModel.Id}", UpdateModel);
+						await OnChange.InvokeAsync($"Genre '{UpdateModel.Name}' has been updated.");
+					}
+					catch
+					{
+						await OnChange.InvokeAsync($"No changes has been made to genre: {Model.Name}");
+					}
 					break;
 				case "Delete":
-					await AdminService.DeleteAsync<GenreDto>($"genres/{Model.Id}");
-					await OnChange.InvokeAsync($"Film '{Model.Name}' has been deleted.");
+					try
+					{
+						await AdminService.DeleteAsync<GenreDto>($"genres/{Model.Id}");
+						await OnChange.InvokeAsync($"Film '{Model.Name}' has been deleted.");
+					}
+					catch (Exception)
+					{
+						await OnChange.InvokeAsync($"Could not delete genre: {Model.Name}");
+					}
 					break;
 			}
 		}

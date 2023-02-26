@@ -69,6 +69,86 @@
       "PackagePath": "staticwebassets\\icon-192.png"
     },
     {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\BlueVelvet.jpg",
+      "PackagePath": "staticwebassets\\images\\BlueVelvet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\Dune.jpg",
+      "PackagePath": "staticwebassets\\images\\Dune.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\Eraserhead.jpg",
+      "PackagePath": "staticwebassets\\images\\Eraserhead.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\FastCheapOutOfControl.jpg",
+      "PackagePath": "staticwebassets\\images\\FastCheapOutOfControl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\HowlsMovingCastle.jpg",
+      "PackagePath": "staticwebassets\\images\\HowlsMovingCastle.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\IMG_20160803_021640.jpg",
+      "PackagePath": "staticwebassets\\images\\IMG_20160803_021640.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\Inception.jpg",
+      "PackagePath": "staticwebassets\\images\\Inception.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\MyNeighbourTotoro.jpg",
+      "PackagePath": "staticwebassets\\images\\MyNeighbourTotoro.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\OceansEleven.jpg",
+      "PackagePath": "staticwebassets\\images\\OceansEleven.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\PiratesOfTheCaribbeanCurseOfThePearl.jpg",
+      "PackagePath": "staticwebassets\\images\\PiratesOfTheCaribbeanCurseOfThePearl.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\PiratesOfTheCaribbeanDeadMansChest.jpg",
+      "PackagePath": "staticwebassets\\images\\PiratesOfTheCaribbeanDeadMansChest.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\ShutterIsland.jpg",
+      "PackagePath": "staticwebassets\\images\\ShutterIsland.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\SpiritedAway.jpg",
+      "PackagePath": "staticwebassets\\images\\SpiritedAway.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\TheFounder.jpg",
+      "PackagePath": "staticwebassets\\images\\TheFounder.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\TheLaundromat.jpg",
+      "PackagePath": "staticwebassets\\images\\TheLaundromat.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\UnknownKnown.jpg",
+      "PackagePath": "staticwebassets\\images\\UnknownKnown.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\WolfOfWallStreet.jpg",
+      "PackagePath": "staticwebassets\\images\\WolfOfWallStreet.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\girlonthetrain.jpg",
+      "PackagePath": "staticwebassets\\images\\girlonthetrain.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\moonlight-ver2-xlg.jpg",
+      "PackagePath": "staticwebassets\\images\\moonlight-ver2-xlg.jpg"
+    },
+    {
+      "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\images\\rogueone.jpg",
+      "PackagePath": "staticwebassets\\images\\rogueone.jpg"
+    },
+    {
       "Id": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\wwwroot\\index.html",
       "PackagePath": "staticwebassets\\index.html"
     },

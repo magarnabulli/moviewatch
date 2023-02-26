@@ -1,0 +1,24 @@
+﻿@page "/{Route}"
+@if (Route == Routes.Films)
+{
+	<FilmsPortal />
+}
+@if (Route == Routes.Directors)
+{
+	<DirectorsPortal />
+}
+@if (Route == Routes.Profile)
+{
+	<GenresPortal />
+}
+@if (Route == Routes.Homepage)
+{
+	<Homepage />
+}
+@if (Route == Routes.Profile)
+{
+	<LoginPortal />
+}
+@code {
+	[Parameter] public string Route { get; set; } = string.Empty;
+}

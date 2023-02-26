@@ -1,7 +1,4 @@
-﻿
-using MovieWatchDb.Entities;
-
-namespace MovieWatchAPI.Controllers
+﻿namespace MovieWatchAPI.Controllers
 {
 	[Route("api/films")]
 	[ApiController]
@@ -15,20 +12,11 @@ namespace MovieWatchAPI.Controllers
 			try
 			{
 				db.Include<Film>();
-				List<FilmDto> films = freeOnly ?
-					await db.ReadFreeWatchAsync<Film, FilmDto>(c => c.Free == freeOnly) :
-					await db.ReadAsync<Film, FilmDto>();
-				var filmsgenre = await db.ReadRefAsync<FilmGenre, FilmGenreDto>();
-				foreach (var film in films)
-				{
-					foreach (var genre in filmsgenre)
-					{
-						if (genre.FilmId.Equals(film.Id))
-						{
-							film.FilmGenres.Add(await db.ReadOneAsync<Genre, CreateGenreDto>(g => g.Id == genre.GenreId));
-						}
-					}
-				}
+				db.IncludeRef<FilmGenre>();
+				db.Include<Genre>();	
+				List<FilmInfoDto> films = freeOnly ?
+					await db.ReadFreeWatchAsync<Film, FilmInfoDto>(c => c.Free == freeOnly) :
+					await db.ReadAsync<Film, FilmInfoDto>();
 				return Results.Ok(films);
 			}
 			catch (Exception)
@@ -41,17 +29,10 @@ namespace MovieWatchAPI.Controllers
 		{
 			try
 			{
-				db.Include<Genre>();
-				db.Include<Director>();
-				var film = await db.ReadOneAsync<Film, FilmDto>(c => c.Id == id);
-				var filmsgenre = await db.ReadRefAsync<FilmGenre, FilmGenreDto>();
-				foreach (var filmGenre in filmsgenre)
-				{
-					if (filmGenre.FilmId.Equals(film.Id))
-					{
-						film.FilmGenres.Add(await db.ReadOneAsync<Genre, CreateGenreDto>(g => g.Id == filmGenre.GenreId));
-					}
-				}
+				db.IncludeRef<FilmGenre>();
+				db.IncludeRef<SimilarFilms>();
+				db.Include<Film>();
+				var film = await db.ReadOneAsync<Film, FilmInfoDto>(c => c.Id == id);
 				return Results.Ok(film);
 			}
 			catch (Exception)

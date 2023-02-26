@@ -1,5 +1,4 @@
 ﻿
-
 namespace MovieWatchAPI.Controllers
 {
 	[Route("api/directors")]
@@ -15,13 +14,11 @@ namespace MovieWatchAPI.Controllers
 			try
 			{
 				db.Include<Director>();
-				db.Include<Film>();
-				List<DirectorDto> directors = await db.ReadAsync<Director, DirectorDto>();
+				List<DirectorInfoDto> directors = await db.ReadAsync<Director, DirectorInfoDto>();
 				return Results.Ok(directors);
 			}
 			catch (Exception)
 			{
-
 				throw;
 			}
 		}
@@ -32,8 +29,8 @@ namespace MovieWatchAPI.Controllers
 			{
 				db.Include<Director>();
 				db.Include<Film>();
-				var director = await db.ReadOneAsync<Director, DirectorDto>(c=> c.Id ==id);
-				if(director == null) return Results.NotFound("Could not find the director..");
+				var director = await db.ReadOneAsync<Director, DirectorInfoDto>(c => c.Id ==id);
+				if (director == null) return Results.NotFound("Could not find the director..");
 				return Results.Ok(director);
 			}
 			catch (Exception)
@@ -82,7 +79,6 @@ namespace MovieWatchAPI.Controllers
 			}
 
 		}
-
 		[HttpDelete("{id}")]
 		public async Task<IResult> Delete(int id)
 		{
