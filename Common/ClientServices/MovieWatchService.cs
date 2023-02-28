@@ -1,4 +1,6 @@
 ﻿
+using Common.Dtos;
+
 namespace Common.ClientServices
 {
 	public class MovieWatchService : IMovieWatchService
@@ -8,13 +10,14 @@ namespace Common.ClientServices
 		{
 			Http=http;
 		}
-		public async Task<List<FilmDto>> ReadFilmsAsync(bool free)
+		
+		public async Task<List<FilmInfoDto>> ReadFilmsAsync(bool free)
 		{
 			try
 			{
-				HttpResponseMessage response = await Http.Client.GetAsync($"films?Free={free}");
+				HttpResponseMessage response = await Http.Client.GetAsync($"films?freeOnly={free}");
 				response.EnsureSuccessStatusCode();
-				var result = JsonSerializer.Deserialize<List<FilmDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				var result = JsonSerializer.Deserialize<List<FilmInfoDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{
 					PropertyNameCaseInsensitive= true,
 				});
@@ -25,13 +28,13 @@ namespace Common.ClientServices
 				return new();
 			}
 		}
-		public async Task<List<GenreDto>> ReadGenresAsync()
+		public async Task<List<GenreInfoDto>> ReadGenresAsync()
 		{
 			try
 			{
 				HttpResponseMessage response = await Http.Client.GetAsync("genres");
 				response.EnsureSuccessStatusCode();
-				var result = JsonSerializer.Deserialize<List<GenreDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				var result = JsonSerializer.Deserialize<List<GenreInfoDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{
 					PropertyNameCaseInsensitive= true,
 				});
@@ -42,13 +45,30 @@ namespace Common.ClientServices
 				return new();
 			}
 		}
-		public async Task<List<DirectorDto>> ReadDirectorsAsync()
+		public async Task<List<FilmGenreDto>> ReadFilmGenresAsync()
+		{
+			try
+			{
+				HttpResponseMessage response = await Http.Client.GetAsync("filmgenres");
+				response.EnsureSuccessStatusCode();
+				var result = JsonSerializer.Deserialize<List<FilmGenreDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				{
+					PropertyNameCaseInsensitive= true,
+				});
+				return result ?? new();
+			}
+			catch
+			{
+				return new();
+			}
+		}
+		public async Task<List<DirectorInfoDto>> ReadDirectorsAsync()
 		{
 			try
 			{
 				HttpResponseMessage response = await Http.Client.GetAsync("directors");
 				response.EnsureSuccessStatusCode();
-				var result = JsonSerializer.Deserialize<List<DirectorDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				var result = JsonSerializer.Deserialize<List<DirectorInfoDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{
 					PropertyNameCaseInsensitive= true,
 				});
@@ -59,13 +79,13 @@ namespace Common.ClientServices
 				return new();
 			}
 		}
-		public async Task<FilmDto> ReadFilmAsync<FilmDto>(int id)
+		public async Task<FilmInfoDto> ReadFilmAsync(int id)
 		{
 			try
 			{
 				HttpResponseMessage response = await Http.Client.GetAsync($"films/{id}");
 				response.EnsureSuccessStatusCode();
-				var result = JsonSerializer.Deserialize<FilmDto>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				var result = JsonSerializer.Deserialize<FilmInfoDto>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{
 					PropertyNameCaseInsensitive= true,
 				});
@@ -77,13 +97,13 @@ namespace Common.ClientServices
 				throw;
 			}
 		}
-		public async Task<GenreDto> ReadGenreAsync<GenreDto>(int id)
+		public async Task<GenreInfoDto> ReadGenreAsync(int id)
 		{
 			try
 			{
 				HttpResponseMessage response = await Http.Client.GetAsync($"genres/{id}");
 				response.EnsureSuccessStatusCode();
-				var result = JsonSerializer.Deserialize<GenreDto>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				var result = JsonSerializer.Deserialize<GenreInfoDto>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{
 					PropertyNameCaseInsensitive= true,
 				});
@@ -95,13 +115,13 @@ namespace Common.ClientServices
 				throw;
 			}
 		}
-		public async Task<DirectorDto> ReadDirectorAsync<DirectorDto>(int id)
+		public async Task<DirectorInfoDto> ReadDirectorAsync(int id)
 		{
 			try
 			{
 				HttpResponseMessage response = await Http.Client.GetAsync($"directors/{id}");
 				response.EnsureSuccessStatusCode();
-				var result = JsonSerializer.Deserialize<DirectorDto>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
+				var result = JsonSerializer.Deserialize<DirectorInfoDto>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{
 					PropertyNameCaseInsensitive= true,
 				});

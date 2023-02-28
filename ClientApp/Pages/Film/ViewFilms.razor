@@ -1,0 +1,131 @@
+﻿@page "/Viewfilms/{Choice:int}"
+@inject IMovieWatchService Service
+@inject NavigationManager navman
+
+<a href="/" class="btn btn-main p-3 m-3">
+	<i class="io io-arrow-left"></i>
+	<span class="vertical-align">Back</span>
+</a>
+
+
+
+@if (Choice.Equals(1)) @*show A-Z*@
+{
+		<h3 class="p-2 m-1">MOVIEWATCH / All films</h3>
+	<div class="row g-0 bg-body-secondary position-relative p-4 m-4">
+		@*card me-4 mb-4 rounded-0*@
+		@foreach (var item in Films)
+		{
+			<div class="card" style="width: 18rem;">
+				<img src="@item.ImgUrl" class="card-img-top" alt="@item.ImgUrl">
+				<div class="card-body">
+					<h5 class="card-title">@item.Title</h5>
+					<p class="card-text">@item.Description?.Truncate(50)</p>
+					<a href="tofilm/@item.Id" class="card-btn">Watch</a>
+				</div>
+			</div>
+		}
+	</div>
+}
+@if (Choice.Equals(2)) @*show collections Directors*@
+{
+		<h3 class="p-2 m-1">MOVIEWATCH / Director's colllections</h3>
+	@*card me-4 mb-4 rounded-0*@
+	@foreach (var item in Directors)
+	{
+		<div class="row g-0 bg-body-secondary position-relative p-4 m-4 flex-row">
+			<h3>@item.Name</h3>
+			@foreach (var ff in item.Films)
+			{
+				@foreach (var film in DirectorsFilms)
+				{
+					if (ff.Title == film.Title)
+					{
+						<div class="card" style="width: 18rem;">
+							<img src="@ff.ImgUrl" class="card-img-top" alt="@ff.ImgUrl">
+							<div class="card-body">
+								<h5 class="card-title">@ff.Title</h5>
+								<p class="card-text">@ff.Description?.Truncate(50)</p>
+								<a href="tofilm/@film.Id" class="card-btn">Watch</a>
+							</div>
+						</div>
+
+					}
+				}
+			}
+		</div>
+	}
+}
+@if (Choice.Equals(3)) @*show free films *@
+{
+		<h3 class="p-2 m-1">MOVIEWATCH / Free films</h3>
+	<div class="row g-0 bg-body-secondary position-relative p-4 m-4">
+		@*card me-4 mb-4 rounded-0*@
+		@foreach (var item in FreeFilms)
+		{
+			<div class="card" style="width: 18rem;">
+				<img src="@item.ImgUrl" class="card-img-top" alt="@item.ImgUrl">
+				<div class="card-body">
+					<h5 class="card-title">@item.Title</h5>
+					<p class="card-text">@item.Description?.Truncate(50)</p>
+					<a href="tofilm/@item.Id" class="card-btn">Watch</a>
+				</div>
+			</div>
+		}
+	</div>
+}
+@if (Choice.Equals(4)) @*show by genre*@
+{
+	<h3 class="p-2 m-1">MOVIEWATCH / Browse by genre</h3>
+	@foreach (var item in Genres)
+	{
+		<div class="row g-0 bg-body-secondary position-relative p-4 m-4 flex-row">
+			<h3>@item.Name</h3>
+			@foreach (var ff in item.Films)
+			{
+				<div class="card" style="width: 18rem;">
+					<img src="@ff.ImgUrl" class="card-img-top" alt="@ff.ImgUrl">
+					<div class="card-body">
+						<h5 class="card-title">@ff.Title</h5>
+						<p class="card-text">@ff.Description?.Truncate(50)</p>
+						<a href="tofilm/3" class="card-btn">Watch</a>
+					</div>
+				</div>
+			}
+		</div>
+	}
+}
+@code {
+	[Parameter] public int Choice { get; set; } = new();
+	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
+	public List<FilmInfoDto> Films { get; set; } = new();
+	public List<FilmInfoDto> FreeFilms { get; set; } = new();
+	public string Navigation { get; set; } = string.Empty;
+	void Refresh(string href) => Navigation = href;
+	public List<GenreInfoDto> Genres { get; set; } = new();
+	public List<DirectorInfoDto> Directors { get; set; } = new();
+	public List<FilmInfoDto> DirectorsFilms { get; set; } = new();
+	protected override async Task OnInitializedAsync()
+	{
+		Films = await Service.ReadFilmsAsync(false);
+		FreeFilms = await Service.ReadFilmsAsync(true);
+		Genres = await Service.ReadGenresAsync();
+		Directors = await Service.ReadDirectorsAsync();
+
+		foreach (var film in Films)
+		{
+			foreach (var director in Directors)
+			{
+				foreach (var item in director.Films)
+				{
+					if (item.Title == film.Title)
+					{
+						DirectorsFilms.Add(film);
+					}
+				}
+			}
+		}
+	}
+
+
+}

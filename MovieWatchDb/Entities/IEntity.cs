@@ -1,4 +1,5 @@
-﻿namespace MovieWatchDb.Entities
+﻿
+namespace MovieWatchDb.Entities
 {
 	public interface IEntity
 	{

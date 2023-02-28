@@ -1,10 +1,10 @@
 ﻿@inject IAdminService AdminService
-<table class="table m-1">
+<table class="table table-bordered m-3">
 	<thead>
-		<tr>
+		<tr >
 			<th>Name</th>
-			<th>Films</th>
-			<th>Delete</th>
+			<th>Genres</th>
+			<th>Edit</th>
 		</tr>
 	</thead>
 	<tbody>
@@ -13,14 +13,15 @@
 			<tr>
 				<td>@genre.Name</td>
 				<td>
-					@foreach (var film in genre.FilmGenres)
+				@foreach (var film in genre.Films)
 					{
 						<li>@film.Title</li>
 					}
 				</td>
 				<td>
 					<div class="d-flex me-1">
-						<button class="btn btn-outline-danger rounded-0" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, genre.Id)))">Delete</button>
+						<button class="btn btn btn-outline-danger rounded-2 m-1" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Delete, genre.Id)))">Delete</button>
+						<button class="btn btn btn-outline-primary rounded-2 m-1" @onclick="@(() => OnClick.InvokeAsync(new ClickModel(PageType.Update, genre.Id)))">Update</button>
 					</div>
 				</td>
 			</tr>
@@ -29,7 +30,7 @@
 </table>
 
 @code {
-	[Parameter] public List<GenreDto> Model { get; set; } = new();
+	[Parameter] public List<GenreInfoDto> Model { get; set; } = new();
 	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
 	[Parameter] public string Page { get; set; } = string.Empty;
 

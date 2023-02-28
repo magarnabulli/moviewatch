@@ -1,5 +1,4 @@
-﻿
-namespace MovieWatchAPI.Controllers
+﻿namespace MovieWatchAPI.Controllers
 {
 	[Route("api/filmgenres")]
 	[ApiController]
@@ -54,7 +53,7 @@ namespace MovieWatchAPI.Controllers
 			{
 				throw;
 			}
-
 		}
+
 	}
 }

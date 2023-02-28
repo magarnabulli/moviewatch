@@ -1,5 +1,5 @@
 ﻿@inject IAdminService AdminService
-
+@inject IWebHostEnvironment environment
 <div class="d-xl justify-content-center">
 	<div class="mb-3">
 		@if (Page.Equals(PageType.Delete))
@@ -14,9 +14,12 @@
 		{
 			<EditForm Model="@CreateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
 				<div class="mb-3">
-					@*title*@
 					<InputText id="title" class="form-control me-2" @bind-Value="CreateModel.Title" placeholder="Title"></InputText>
 					<ValidationMessage For="@(()=> CreateModel.Title)" />
+				</div>
+				<div class="mb-3">
+					@*title*@
+					<InputFile OnChange="@FileInput"></InputFile>
 				</div>
 				<div class="mb-3">
 					@*description*@
@@ -25,8 +28,8 @@
 				</div>
 				<div class="mb-3">
 					@*released*@
-					<InputDate id="released" class="form-control me-2" @bind-Value="CreateModel.Realeased" placeholder="Realeased"></InputDate>
-					<ValidationMessage For="@(()=> CreateModel.Realeased)" />
+					<InputDate id="released" class="form-control me-2" @bind-Value="CreateModel.Released" placeholder="Released"></InputDate>
+					<ValidationMessage For="@(()=> CreateModel.Released)" />
 				</div>
 				<div>
 					@*directorID*@
@@ -42,15 +45,32 @@
 					<ValidationMessage For="@(()=> CreateModel.DirectorId)" />
 				</div>
 				<div>
+					@*similar*@
+					<DataAnnotationsValidator />
+					<ValidationSummary />
+					<div class="form-check form-switch">
+						@foreach (var item in Films)
+						{
+							<div>
+								<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" value="@item.Id" @onclick="()=>SelectedValuesSimilar.Add(item.Id)" />
+								<label class="form-check-label" for="flexSwitchCheckDefault">@item.Title</label>
+							</div>
+						}
+					</div>
+				</div>
+				<div>
 					@*genres*@
 					<DataAnnotationsValidator />
 					<ValidationSummary />
-					<InputSelect @bind-Value="SelectedValues">
+					<div class="form-check form-switch">
 						@foreach (var item in Genres)
 						{
-							<option value="@item.Id">@item.Name</option>
+							<div>
+								<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" value="@item.Id" @onclick="()=>SelectedValuesGenre.Add(item.Id)" />
+								<label class="form-check-label" for="flexSwitchCheckDefault">@item.Name</label>
+							</div>
 						}
-					</InputSelect>
+					</div>
 				</div>
 				<div class="m-3">
 					@*free*@
@@ -71,49 +91,87 @@
 		@if (Page.Equals(PageType.Update))
 		{
 			<EditForm Model="@UpdateModel" OnValidSubmit="@SubmitChanges" class="mb-5 border border-1 border-secondary p-2 w-25">
+				<InputText id="title" class="form-control me-2" @bind-Value="UpdateModel.Title" disabled placeholder="@Model.Title"></InputText>
 				<div class="mb-3">
-					@*filmid*@
-					<InputSelect @bind-Value="UpdateModel.Id" class="form-control mb-3">
-						<option value=0>Choose film to update..</option>
-						@foreach (var movie in Films)
-						{
-							<option value="@movie.Id">
-								@movie.Title
-							</option>
-						}
-					</InputSelect>
-					<ValidationMessage For="@(()=> UpdateModel.Id)" />
+					<InputFile OnChange="@FileInput"></InputFile>
 				</div>
-				<div>
-					@*genres*@
+				<div class=" mb-3">
+					<section>
+						<div class="form-check form-switch">
+							@foreach (var item in Model.Genres)
+							{
+								SelectedValuesGenre.Add(item.Id);
+							}
+							@foreach (var item in Genres)
+							{
+								if (SelectedValuesGenre.Contains(item.Id))
+								{
+									<div>
+										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @onclick="()=> HandleFilmGenre(Model.Id, item.Id)" checked />
+										<label class="form-check-label" for="flexSwitchCheckDefault">@item.Name</label>
+									</div>
+								}
+								else
+								{
+									<div>
+										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @onclick="()=>HandleFilmGenre(Model.Id, item.Id)" />
+										<label class="form-check-label" for="flexSwitchCheckDefault">@item.Name</label>
+									</div>
+								}
+							}
+						</div>
+					</section>
 					<DataAnnotationsValidator />
 					<ValidationSummary />
-					<InputSelect @bind-Value="SelectedValues">
-						@foreach (var item in Genres)
-						{
-							<option value="@item.Id">@item.Name</option>
-						}
-					</InputSelect>
+				</div>
+				<div class=" mb-3">
+					<section>
+						<div class="form-check form-switch">
+							@foreach (var item in Model.SimilarFilms)
+							{
+								SelectedValuesSimilar.Add(item.FilmId);
+							}
+							@foreach (var item in Films)
+							{
+								if (SelectedValuesSimilar.Contains(item.Id))
+								{
+									<div>
+										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @onclick="()=> HandleSimilarFilm(Model.Id, item.Id)" checked />
+										<label class="form-check-label" for="flexSwitchCheckDefault">@item.Title</label>
+									</div>
+								}
+								else
+								{
+									<div>
+										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @onclick="()=>HandleSimilarFilm(Model.Id, item.Id)" />
+										<label class="form-check-label" for="flexSwitchCheckDefault">@item.Title</label>
+									</div>
+								}
+							}
+						</div>
+					</section>
+					<DataAnnotationsValidator />
+					<ValidationSummary />
 				</div>
 				<div class="mb-3">
 					@*title*@
-					<InputText id="title" class="form-control me-2" @bind-Value="UpdateModel.Title" placeholder="New Title.."></InputText>
+					<InputText id="title" class="form-control me-2" @bind-Value="UpdateModel.Title" placeholder="New title .."></InputText>
 					<ValidationMessage For="@(()=> UpdateModel.Title)" />
 				</div>
 				<div class="mb-3">
 					@*descripton*@
-					<InputText id="description" class="form-control me-2" @bind-Value="UpdateModel.Description" placeholder="New Description.."></InputText>
+					<InputText id="description" class="form-control me-2" @bind-Value="UpdateModel.Description" placeholder="@Model.Description"></InputText>
 					<ValidationMessage For="@(()=> UpdateModel.Description)" />
 				</div>
 				<div class="mb-3">
 					@*released*@
-					<InputDate id="released" class="form-control me-2" @bind-Value="UpdateModel.Realeased" placeholder="New Realeased date.."></InputDate>
-					<ValidationMessage For="@(()=> UpdateModel.Realeased)" />
+					<InputDate id="released" class="form-control me-2" @bind-Value="UpdateModel.Released" placeholder="@Model.Released"></InputDate>
+					<ValidationMessage For="@(()=> UpdateModel.Released)" />
 				</div>
 				<div>
 					@*director*@
 					<InputSelect @bind-Value="UpdateModel.DirectorId" class="form-control mb-3">
-						<option value=0>Choose director..</option>
+						<option value=@UpdateModel.DirectorId>Choose director..</option>
 						@foreach (var director in Directors)
 						{
 							<option value="@director.Id">
@@ -128,12 +186,13 @@
 					<label>
 						<InputCheckbox @bind-Value="UpdateModel.Free"></InputCheckbox>
 						Free Film
-						<ValidationMessage For="@(()=> UpdateModel)" />
+						<ValidationMessage For="@(()=> UpdateModel.Free)" />
 					</label>
 				</div>
 				<div>
 					@*filmurl*@
-					<InputText id="filmurl" class="form-control me-2" @bind-Value="UpdateModel.FilmUrl" placeholder="New FilmUrl.."></InputText>
+					<InputText id=" filmurl" class="form-control me-2" @bind-Value="UpdateModel.FilmUrl" placeholder="@Model.FilmUrl">
+					</InputText>
 					<ValidationMessage For="@(()=> UpdateModel.FilmUrl)" />
 				</div>
 				<button type="submit" class="btn btn">Update</button>
@@ -142,23 +201,88 @@
 	</div>
 </div>
 @code {
-	[Parameter] public CreateFilmDto CreateModel { get; set; } = new(); 
-	[Parameter] public UpdateFilmDto UpdateModel { get; set; } = new(); 
-	[Parameter] public FilmDto Model { get; set; } = new(); 
+	//create & update needs
+	[Parameter] public CreateFilmDto CreateModel { get; set; } = new();
+	[Parameter] public UpdateFilmDto UpdateModel { get; set; } = new();
+	public List<DirectorDto> Directors { get; set; } = new(); //choose director
+	private long maxFileSize = 1024 * 1024 * 3;//imageupload
+	string FileName { get; set; } = null!;
+	public List<GenreDto> Genres { get; set; } = new(); //choose genres
+	public FilmGenreDto filmGenre { get; set; } = new();//Create new filmgenre when choosing new genre
+	public List<FilmGenreDto> filmGenres { get; set; } = new();//Create new filmgenre when choosing new genre
+	public List<int> SelectedValuesGenre { get; set; } = new();//toggling genres, toggled if already exists
+	public List<int> SelectedValuesSimilar { get; set; } = new();//toggling genres, toggled if already exists
+	public List<FilmInfoDto> Films { get; set; } = new(); //for similarfilms
+	public List<ManageSimilarFilmDto> SimilarFilms { get; set; } = new(); //compare so u dont add twice
+	//delete needs
+	[Parameter] public FilmInfoDto Model { get; set; } = new();
+
+	//functionality
 	[Parameter] public string Page { get; set; } = string.Empty;
-	[Parameter] public EventCallback<string> OnChange { get; set; } 
-	public int[] SelectedValues { get; set; } = new int[] { }; 
-	public FilmGenreDto filmGenre { get; set; } = new();
-	public List<FilmGenreDto> filmGenres {get;set;} = new();
-	public List<DirectorDto> Directors { get; set; } = new();
-	public List<CreateGenreDto> Genres { get; set; } = new(); 
-	public List<FilmDto> Films { get; set; } = new(); 
-	public List<CreateGenreDto> AddGenres { get; set; } = new();
+	[Parameter] public EventCallback<string> OnChangeAlert { get; set; }
+	[Parameter] public EventCallback<ClickModel> OnClick { get; set; }
+
+	public ManageSimilarFilmDto SimilarFilmReverse { get; set; } = new(); //Create new similarfilm (two times?)
+	public ManageSimilarFilmDto SimilarFilm = new();
+
 	protected override async Task OnInitializedAsync()
 	{
+		Films = await AdminService.ReadAsync<FilmInfoDto>("films");
+		filmGenres = await AdminService.ReadAsync<FilmGenreDto>("filmgenres");
 		Directors = await AdminService.ReadAsync<DirectorDto>("directors");
-		Films = await AdminService.ReadAsync<FilmDto>("films");
-		Genres = await AdminService.ReadAsync<CreateGenreDto>("genres");
+		Genres = await AdminService.ReadAsync<GenreDto>("genres");
+
+	}
+	private async Task HandleSimilarFilm(int filmId, int similarId)
+	{
+		SimilarFilmReverse.SimilarId = filmId;
+		SimilarFilmReverse.FilmId = similarId;
+		SimilarFilm.SimilarId = similarId;
+		SimilarFilm.FilmId = filmId;
+		bool existsSimilar = false;
+		bool existsReverse = false;
+		SimilarFilms = await AdminService.ReadAsync<ManageSimilarFilmDto>("similarfilms");
+
+		foreach (var item in SimilarFilms)
+		{
+			if (item.SimilarId == SimilarFilmReverse.FilmId && item.FilmId == SimilarFilmReverse.SimilarId) { existsReverse = true; }
+			if (item.SimilarId == SimilarFilm.SimilarId && item.FilmId == SimilarFilm.FilmId) { existsSimilar = true; }
+		}
+		//if(SimilarFilms.Contains(SimilarFilm) && SimilarFilms.Contains(reverse)) { exists = true; }
+		if (existsReverse == true && existsSimilar == true)
+		{
+			await AdminService.DeleteAsync<ManageSimilarFilmDto>("similarfilms", SimilarFilm);
+			await AdminService.DeleteAsync<ManageSimilarFilmDto>("similarfilms", SimilarFilmReverse);
+		}
+		else
+		{
+			await AdminService.CreateAsync<ManageSimilarFilmDto>("similarfilms", SimilarFilm);
+			await AdminService.CreateAsync<ManageSimilarFilmDto>("similarfilms", SimilarFilmReverse);
+		}
+	}
+	private async Task HandleFilmGenre(int filmid, int genreid)
+	{
+		filmGenre.FilmId = filmid;
+		filmGenre.GenreId = genreid;
+		bool exists = false;
+		filmGenres = await AdminService.ReadAsync<FilmGenreDto>("filmgenres");
+		foreach (var item in filmGenres)
+		{
+			if (item.FilmId == filmGenre.FilmId && item.GenreId == filmGenre.GenreId) { exists = true; }
+		}
+		if (exists == true) { await AdminService.DeleteAsync<FilmGenreDto>("filmgenres", filmGenre); }
+		else { await AdminService.CreateAsync<FilmGenreDto>("filmgenres", filmGenre); }
+	}
+	private async Task FileInput(InputFileChangeEventArgs e)
+	{
+		var file = e.File;
+		FileName = "/images/" + file.Name;
+		CreateModel.ImgUrl = FileName;
+		UpdateModel.ImgUrl = FileName;
+
+		var path = Path.Combine(environment.WebRootPath, "images", file.Name);
+		await using FileStream fs = new(path, FileMode.Create);
+		await file.OpenReadStream(maxFileSize).CopyToAsync(fs);
 	}
 	private async Task SubmitChanges()
 	{
@@ -167,64 +291,71 @@
 			switch (Page)
 			{
 				case "Create":
-					await AdminService.CreateAsync<CreateFilmDto>("films", CreateModel);
-					Films = await AdminService.ReadAsync<FilmDto>("films");
-					foreach (var genre in Genres)
+					try
 					{
-						foreach (var item in SelectedValues)
+						await AdminService.CreateAsync<CreateFilmDto>("films", CreateModel);
+						Films = await AdminService.ReadAsync<FilmInfoDto>("films");
+						foreach (var item in Films)
 						{
-							if (genre.Id.Equals(item))
+							if (item.Title == CreateModel.Title)
 							{
-								filmGenre.GenreId = item;
-								foreach (var film in Films)
+								foreach (var genre in SelectedValuesGenre)
 								{
-									if (film.Title.Equals(CreateModel.Title))
-									{
-										filmGenre.FilmId = film.Id;
-									}
+									await HandleFilmGenre(item.Id, genre);
 								}
-								await AdminService.CreateAsync<FilmGenreDto>("filmgenres", filmGenre);
 							}
 						}
+						foreach (var item in Films)
+						{
+							if (item.Title == CreateModel.Title)
+							{
+								foreach (var film in SelectedValuesSimilar)
+								{
+									await HandleSimilarFilm(item.Id, film);
+								}
+							}
+						}
+						await OnChangeAlert.InvokeAsync($"Film: '{CreateModel.Title}' has been added");
 					}
-					await OnChange.InvokeAsync($"Film '{CreateModel.Title}'has been added");
+					catch (Exception)
+					{
+
+						await OnChangeAlert.InvokeAsync($"Could not add the film. Make sure all fields are filled before submitting.");
+					}
 					break;
 				case "Update":
-					filmGenres = await AdminService.ReadAsync<FilmGenreDto>("filmgenres");
-					foreach (var item in filmGenres)
+					try
 					{
-						if(item.FilmId == UpdateModel.Id)
-						{	
-							await AdminService.DeleteAsync<FilmGenreDto>($"filmgenres", item);
-						}	
+						UpdateModel.Id = Model.Id;
+						await AdminService.UpdateAsync<UpdateFilmDto>($"films/{Model.Id}", UpdateModel);
+						await OnChangeAlert.InvokeAsync($"Film: '{Model.Title}' has been updated.");
 					}
-					foreach (var genre in Genres)
+					catch
 					{
-						foreach (var item in SelectedValues)
-						{
-							if (genre.Id.Equals(item))
-							{
-								filmGenre.GenreId = item;
-								filmGenre.FilmId = UpdateModel.Id;
-								await AdminService.CreateAsync<FilmGenreDto>("filmgenres", filmGenre);
-							}
-						}
+						await OnChangeAlert.InvokeAsync($"No changes submitted to film '{Model.Title}' unless you have submitted changes to the films genres or its list of similarfilms.");
 					}
-					await AdminService.UpdateAsync<UpdateFilmDto>($"films/{UpdateModel.Id}", UpdateModel);
-					await OnChange.InvokeAsync($"Film '{UpdateModel.Title}' has been updated.");
 					break;
 				case "Delete":
-					await AdminService.DeleteAsync<FilmDto>($"films/{Model.Id}");
-					await OnChange.InvokeAsync($"Film '{Model.Title}' has been deleted.");
-					break;
-				case "Add":
+					try
+					{
+						foreach (var item in Model.SimilarFilms)
+						{
+							await HandleSimilarFilm(item.SimilarId, item.FilmId);
+						}
+						await AdminService.DeleteAsync<FilmDto>($"films/{Model.Id}");
+						await OnChangeAlert.InvokeAsync($"Film '{Model.Title}' has been deleted.");
+
+					}
+					catch
+					{
+						await OnChangeAlert.InvokeAsync($"Could not delete the film: '{Model.Title}'.");
+					}
 					break;
 			}
 		}
 		catch
 		{
-			await OnChange.InvokeAsync($"Could not submit the changes to the film '{CreateModel.Title}'.");
+			await OnChangeAlert.InvokeAsync($"Could not submit the changes to the film: '{CreateModel.Title}'.");
 		}
 	}
-}
 }

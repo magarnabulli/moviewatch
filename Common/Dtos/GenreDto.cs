@@ -1,18 +1,21 @@
-﻿
-namespace Common.Dtos
+﻿namespace Common.Dtos
 {
-	public class CreateGenreDto
+	public class GenreDto
 	{
 		public int Id { get; set; }
+		public string? Name { get; set; }		
+	}
+	public class CreateGenreDto
+	{
 		public string Name { get; set; }
 	}
-	public class GenreDto : CreateGenreDto//för admin
+	public class UpdateGenreDto : CreateGenreDto 
 	{
-		public List<CreateFilmDto> FilmGenres { get; set; } = null!;
+		public int Id { get; set; }
 	}
-	public class UpdateGenreDto : CreateGenreDto //för admin
+	public class GenreInfoDto : GenreDto
 	{
-		public int Id { get; set; } //ta fram med id
+		public List<CreateFilmDto> Films { get; set; } = null!;
 	}
 
 }

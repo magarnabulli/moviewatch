@@ -1,0 +1,29 @@
+﻿@page "/h"
+@inject IMovieWatchService Service
+
+	<PageTitle>MovieWatch</PageTitle>
+
+
+
+<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Films)">All films</button>
+<button type="button" class="btn btn-outline-primary rounded-0" @onclick="()=>ChangePageType(PageType.Films)">All films</button>
+@if (Navigation == PageType.Films)
+{
+	<FilmsPortal Page="@Navigation" OnChange="OnChange"></FilmsPortal>
+}
+
+@code {
+	public string Alert { get; set; } = string.Empty;
+	public string Navigation { get; set; } = string.Empty;
+	public string mystyle;
+	void ChangePageType(string pageType) => Navigation = pageType;
+	async Task OnChange()
+	{
+		ChangePageType(PageType.HomePage);
+	}
+	void HeaderMethod()
+	{
+		mystyle = "width:350px; background-color:black;";
+	}
+}
+

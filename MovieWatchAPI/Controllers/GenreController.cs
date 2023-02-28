@@ -1,5 +1,4 @@
-﻿
-namespace MovieWatchAPI.Controllers
+﻿namespace MovieWatchAPI.Controllers
 {
 	[Route("api/genres")]
 	[ApiController]
@@ -13,18 +12,9 @@ namespace MovieWatchAPI.Controllers
 			try
 			{
 				db.Include<Genre>();
-				List<GenreDto> genres = await db.ReadAsync<Genre, GenreDto>();
-				var filmsgenre = await db.ReadRefAsync<FilmGenre, FilmGenreDto>();
-				foreach (var genre in genres)
-				{
-					foreach (var film in filmsgenre)
-					{
-						if (film.GenreId.Equals(genre.Id))
-						{
-							genre.FilmGenres.Add(await db.ReadOneAsync<Film, CreateFilmDto>(f => f.Id == film.FilmId));
-						}
-					}
-				}
+				db.IncludeRef<FilmGenre>();
+				List<GenreInfoDto> genres = await db.ReadAsync<Genre, GenreInfoDto>();
+		
 				return Results.Ok(genres);
 			}
 			catch (Exception)
@@ -40,15 +30,8 @@ namespace MovieWatchAPI.Controllers
 				db.IncludeRef<FilmGenre>();
 				db.Include<Film>();
 				db.Include<Genre>();
-				var genre = await db.ReadOneAsync<Genre, GenreDto>(c => c.Id == id);
-				var filmsgenre = await db.ReadRefAsync<FilmGenre, FilmGenreDto>();
-					foreach (var filmToGenre in filmsgenre)
-					{
-						if (filmToGenre.GenreId.Equals(genre.Id))
-						{
-							genre.FilmGenres.Add(await db.ReadOneAsync<Film, CreateFilmDto>(f => f.Id == filmToGenre.FilmId));
-						}
-					}
+				var genre = await db.ReadOneAsync<Genre, GenreInfoDto>(c => c.Id == id);
+			
 				return Results.Ok(genre);
 			}
 			catch (Exception)
@@ -63,8 +46,8 @@ namespace MovieWatchAPI.Controllers
 			{
 				if (dto == null) return Results.BadRequest();
 				var genre = await db.CreateAsync<Genre, CreateGenreDto>(dto);
-				if(await db.SaveChangesAsync()==false) { return Results.BadRequest(); }
-				return Results.Ok(genre);	
+				if (await db.SaveChangesAsync()==false) { return Results.BadRequest(); }
+				return Results.Ok(genre);
 			}
 			catch (Exception)
 			{
@@ -77,8 +60,8 @@ namespace MovieWatchAPI.Controllers
 			try
 			{
 				if (dto == null) return Results.BadRequest("No genre has been provided");
-				if(!id.Equals(dto.Id)) return Results.BadRequest("Incorrect genre Id");
-				var isFound = await db.AnyAsync<Genre>(c=> c.Id == dto.Id);
+				if (!id.Equals(dto.Id)) return Results.BadRequest("Incorrect genre Id");
+				var isFound = await db.AnyAsync<Genre>(c => c.Id == dto.Id);
 				db.Update<Genre, UpdateGenreDto>(dto.Id, dto);
 				var success = await db.SaveChangesAsync();
 				if (!success) return Results.BadRequest();
