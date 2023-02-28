@@ -1,5 +1,28 @@
-﻿<h3>FilmsPortal</h3>
-filmsportal
+﻿@page "/"
+@inject IMovieWatchService Service
+<h3>M O V I E W A T CH</h3>
+<div>	
+	<a href="/viewfilms/1">
+	<button type="button" class="btn-main">All Films</button>
+	</a>
+	<a href="/viewfilms/2">
+		<button type="button" class="btn-main">Director's collections'</button>
+	</a>
+	<a href="/viewfilms/3">
+		<button type="button" class="btn-main">Free To Watch</button>
+	</a>
+	<a href="/viewfilms/4">
+		<button type="button" class="btn-main">Browse by genre</button>
+	</a>
+	<a href="/">
+		<button type="button" class="btn-main">Home</button>
+	</a>
+</div>
+
 @code {
 	[Parameter] public string Page { get; set; } = string.Empty;
+	[Parameter] public EventCallback<string> OnChange { get; set; }
+	public string Navigation { get; set; } = string.Empty;
+	void ChangePageType(string pageType) => Navigation = pageType;
 }
+

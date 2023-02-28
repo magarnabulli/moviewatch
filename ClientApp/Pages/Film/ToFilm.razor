@@ -2,40 +2,67 @@
 @inject IMovieWatchService Service
 @inject NavigationManager navman
 
-<div class="d-flex flex-wrap justify-content-between mb-3">
-	<section>
-		<h3>@FilmModel.Title</h3>
-		<h5>@FilmModel.Description</h5>
-		<a href="moviescreen/@FilmModel.Id" class="btn-dark">watch movie</a>
-		<a href="/" class="btn btn-primary rounded-0">
-			<i class="io io-arrow-left"></i>
-			<span class="vertical-align">Back to films</span>
-		</a>
-		<div>
-			@if (FilmModel.SimilarFilms != null)
+
+
+<div class="d-flex flex-column mb-3">
+	<a href="/" class="btn btn-main rounded-0">
+		<i class="oi oi-arrow-left"></i>
+		<span class="vertical-align"> Back</span>
+	</a>
+</div>
+<div class="d-flex flex-row mb-3">
+	<section class="border border-secondary">
+		<div class="d-flex flex-fill justify-content-center">
+			<div class="d-flex flex-column align-content-start">
+				
+				<h1 class="m-4 p-3">@FilmModel.Title</h1>
+				<h5 class="m-4 p-3">@FilmModel.Description</h5>
+				<h6 class="m-4 p-3">Director: @director.Name</h6>
+				<div class="d-flex flex-row mb-3 align-bottom">
+					@foreach (var item in FilmsGenres)
+					{
+						<h6 class="m-4 p-3 justify-content-end">@item.Name</h6>
+
+					}
+				</div>
+			</div>
+			@if (FilmModel.FilmUrl != null)
 			{
-				@foreach (var film in FilmModel.SimilarFilms)
-				{
-					<li>
-						<a href="" @onclick="(()=> Refresh(film.Film.Id))" @onclick:preventDefault>
-							@film.Film.Title
-						</a>
-					</li>
-				}
+				<div class="video-player">
+					<iframe align="middle" width="1120" height="630" src="@FilmModel.FilmUrl" frameborder="0"
+						allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+				</div>
 			}
-		</div>
-		<div>
-			@foreach (var item in FilmsGenres)
-			{
-				<li>
-					<a href="genre/@item.Id" class="btn-dark">
-						@item.Name
-					</a>
-				</li>
-			}
+			<section class="d-flex flex-fill justify-content-center">
+			</section>
+
 		</div>
 	</section>
 </div>
+<div class="d-flex flex-column mb-3"></div>
+<section class="border border-secondary">
+	<h1 class="m-4 p-3">Similar films</h1>
+	<div class="d-flex flex-row">
+		@if (FilmModel.SimilarFilms != null)
+		{
+			@foreach (var film in FilmModel.SimilarFilms)
+			{
+				<div class="card">
+					<img src="@film.Film.ImgUrl" class="card-img-top" alt="@film.Film.ImgUrl">
+					<div class="card-body">
+						<a class="aa" href="" @onclick="(()=> Refresh(film.Film.Id))" @onclick:preventDefault>
+							@film.Film.Title
+						</a>
+					</div>
+
+				</div>
+			}
+		}
+	</div>
+</section>
+
+
+
 
 @code {
 	[Parameter] public int Id { get; set; } = new();
@@ -45,6 +72,7 @@
 	public List<FilmGenreDto> FilmGenres { get; set; } = new();
 	public string Navigation { get; set; } = string.Empty;
 	public List<GenreDto> FilmsGenres { get; set; } = new();
+	public DirectorDto director { get; set; } = new();
 	void Refresh(int id)
 	{
 		navman.NavigateTo($"tofilm/{id}", true);
@@ -57,6 +85,7 @@
 		Films = await Service.ReadFilmsAsync(false);
 		FilmGenres = await Service.ReadFilmGenresAsync();
 		GetGenres();
+		director = await Service.ReadDirectorAsync(Id);
 	}
 	public async Task<List<GenreDto>> GetGenres()
 	{
@@ -72,4 +101,5 @@
 		}
 		return FilmsGenres;
 	}
+
 }

@@ -15,7 +15,7 @@ namespace Common.ClientServices
 		{
 			try
 			{
-				HttpResponseMessage response = await Http.Client.GetAsync($"films?Free={free}");
+				HttpResponseMessage response = await Http.Client.GetAsync($"films?freeOnly={free}");
 				response.EnsureSuccessStatusCode();
 				var result = JsonSerializer.Deserialize<List<FilmInfoDto>>(await response.Content.ReadAsStreamAsync(), new JsonSerializerOptions
 				{

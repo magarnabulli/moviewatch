@@ -1,25 +1,105 @@
 @import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
-
+header #header-main {
+    font-size: 50px !important;
+    font-style: italic !important;
+    background-color: rgb(255, 216, 0) !important;
+    float: left !important;
+    display: block !important;
+    color: #f2f2f2 !important;
+    text-align: center !important;
+    padding: 14px 16px !important;
+    text-decoration: none !important;
+    overflow: hidden !important;
+}
+.h1{
+    color:white!important;
+}
+.border-secondary{
+    background-color:rgb(27, 27, 27)!important;
+    border-color:rgb(53, 53, 53)!important;
+}
 html, body {
-    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    background-color: rgb(54, 54, 54) !important;
+    color:white!important;
+
 }
 
+.aa{
+    text-decoration:none!important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif!important;
+    color:white!important;
+}
+.card{
+    background-color:#212324!important;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size:20px !important;
+    padding:1px !important;
+    margin:3px !important;
+    align-items:flex-start!important;
+}
+.card-img-top{
+    margin:5px!important;
+    width:270px !important;
+    height: 400px !important;
+    justify-content:center!important;
+}
+.card-title{
+    font-size:18px !important;
+    align-self:auto!important;
+    color:white!important;
+}
+.card-text{
+    block-size:fit-content !important;
+    width: 270px !important;
+    height: 100px !important;
+    padding:2px!important;
+}
+.card-btn {
+    background-color:rgb(28, 28, 28) !important;
+    padding:7px!important;
+    border-radius:12px !important;
+    border:5px!important;
+    color: rgb(136, 136, 136) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    text-decoration:none !important;
+}
+
+.h3 {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    font-size: larger !important;
+}
 h1:focus {
     outline: none;
 }
-
-a, .btn-link {
-    color: #0071c1;
+.btn-main{
+    font-size:20px!important;
+    background-color:rgb(72, 72, 72)!important;
+    padding: 7px !important;
+    border: 5px !important;
+    color: rgb(136, 136, 136) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+    text-decoration: none !important;
+}
+.btn {
+    color: white!important;
+    background-color: rgb(54, 54, 54);
+    border-color: rgba(0, 0, 0, 0.2);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    
 }
 
 .btn-primary {
-    color: #fff;
-    background-color: #1b6ec2;
-    border-color: #1861ac;
+    color: white!important;
+    background-color: rgb(54, 54, 54)!important;
+    border-color: rgba(0, 0, 0, 0.2)!important;
+}
+.btn-primary :hover{
+    background-color:rgb(28, 28, 28)!important;
 }
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 .content {
@@ -99,3 +179,4 @@ a, .btn-link {
     .loading-progress-text:after {
         content: var(--blazor-load-percentage-text, "Loading");
     }
+
