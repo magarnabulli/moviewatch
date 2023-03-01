@@ -56,6 +56,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxMb2dpbi5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/ClientApp/Pages/Profile/LoginRegister.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxMb2dpblJlZ2lzdGVyLnJhem9y
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/ozkal/Documents/Skola/Webbutveckling/Blazor/LABB2/Försök 2 MovieWatch/MovieWatch/ClientApp/Pages/Profile/Signup.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJvZmlsZVxTaWdudXAucmF6b3I=
 build_metadata.AdditionalFiles.CssScope = 

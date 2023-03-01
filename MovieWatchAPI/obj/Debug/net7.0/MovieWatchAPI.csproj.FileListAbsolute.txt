@@ -80,3 +80,9 @@ C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\obj\Debug\net7.0\MovieWatchAPI.pdb
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\obj\Debug\net7.0\MovieWatchAPI.genruntimeconfig.cache
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\obj\Debug\net7.0\ref\MovieWatchAPI.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\bin\Debug\net7.0\Blazored.LocalStorage.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\MovieWatchAPI\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

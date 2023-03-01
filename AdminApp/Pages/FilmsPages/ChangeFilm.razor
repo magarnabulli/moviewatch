@@ -48,6 +48,7 @@
 					@*similar*@
 					<DataAnnotationsValidator />
 					<ValidationSummary />
+					<label>Choose similar films:</label>
 					<div class="form-check form-switch">
 						@foreach (var item in Films)
 						{
@@ -62,6 +63,7 @@
 					@*genres*@
 					<DataAnnotationsValidator />
 					<ValidationSummary />
+					<label>Choose Genres:</label>
 					<div class="form-check form-switch">
 						@foreach (var item in Genres)
 						{
@@ -97,6 +99,7 @@
 				</div>
 				<div class=" mb-3">
 					<section>
+						<label>Choose Genres:</label>
 						<div class="form-check form-switch">
 							@foreach (var item in Model.Genres)
 							{
@@ -126,6 +129,7 @@
 				</div>
 				<div class=" mb-3">
 					<section>
+						<label>Choose similar films:</label>
 						<div class="form-check form-switch">
 							@foreach (var item in Model.SimilarFilms)
 							{
@@ -142,10 +146,14 @@
 								}
 								else
 								{
-									<div>
-										<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @onclick="()=>HandleSimilarFilm(Model.Id, item.Id)" />
-										<label class="form-check-label" for="flexSwitchCheckDefault">@item.Title</label>
-									</div>
+									if (item.Title != Model.Title)
+									{
+										<div>
+											<input class="form-check-input" type="checkbox" id="flexSwitchCheckDefault" @onclick="()=>HandleSimilarFilm(Model.Id, item.Id)" />
+											<label class="form-check-label" for="flexSwitchCheckDefault">@item.Title</label>
+										</div>
+
+									}
 								}
 							}
 						</div>
@@ -214,7 +222,7 @@
 	public List<int> SelectedValuesSimilar { get; set; } = new();//toggling genres, toggled if already exists
 	public List<FilmInfoDto> Films { get; set; } = new(); //for similarfilms
 	public List<ManageSimilarFilmDto> SimilarFilms { get; set; } = new(); //compare so u dont add twice
-	//delete needs
+																				//delete needs
 	[Parameter] public FilmInfoDto Model { get; set; } = new();
 
 	//functionality

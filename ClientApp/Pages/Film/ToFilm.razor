@@ -2,8 +2,6 @@
 @inject IMovieWatchService Service
 @inject NavigationManager navman
 
-
-
 <div class="d-flex flex-column mb-3">
 	<a href="/" class="btn btn-main rounded-0">
 		<i class="oi oi-arrow-left"></i>
@@ -61,9 +59,6 @@
 	</div>
 </section>
 
-
-
-
 @code {
 	[Parameter] public int Id { get; set; } = new();
 	public FilmInfoDto FilmModel { get; set; } = new();
@@ -85,7 +80,7 @@
 		Films = await Service.ReadFilmsAsync(false);
 		FilmGenres = await Service.ReadFilmGenresAsync();
 		GetGenres();
-		director = await Service.ReadDirectorAsync(Id);
+		director = await Service.ReadDirectorAsync(FilmModel.DirectorId);
 	}
 	public async Task<List<GenreDto>> GetGenres()
 	{

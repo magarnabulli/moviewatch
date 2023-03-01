@@ -33,3 +33,9 @@ C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Common.dll
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Common.pdb
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\obj\Debug\net7.0\AdminApp.csproj.CopyComplete
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Blazored.LocalStorage.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Microsoft.AspNetCore.Authorization.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Microsoft.AspNetCore.Components.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Microsoft.AspNetCore.Metadata.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\AdminApp\bin\Debug\net7.0\Microsoft.Extensions.Options.dll

@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "TYKquPfWZG4wTlILr6Zq2p3djITR4dLmNDJC/m5F3U8=",
+  "Hash": "ZwbYvwBROSNpNBnmKAoxJt1a5zsfS9A0KQiHrKbBxts=",
   "Source": "ClientApp",
   "BasePath": "/",
   "Mode": "Root",
@@ -49,6 +49,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.components.webassembly\\7.0.2\\build\\net7.0\\blazor.webassembly.js"
+    },
+    {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\blazored.localstorage\\4.3.0\\lib\\net7.0\\Blazored.LocalStorage.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\ClientApp.dll",
@@ -252,7 +269,24 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.2\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
+      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.authorization\\7.0.3\\lib\\net7.0\\Microsoft.AspNetCore.Authorization.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "BlazorWebAssemblyResource",
+      "AssetTraitValue": "runtime",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.components.authorization\\7.0.3\\lib\\net7.0\\Microsoft.AspNetCore.Components.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
@@ -269,7 +303,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.2\\lib\\net7.0\\Microsoft.AspNetCore.Components.dll"
+      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.components\\7.0.3\\lib\\net7.0\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Forms.dll",
@@ -337,7 +371,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.2\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
+      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.aspnetcore.metadata\\7.0.3\\lib\\net7.0\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.CSharp.dll",
@@ -592,7 +626,7 @@
       "AssetTraitValue": "runtime",
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.extensions.options\\7.0.0\\lib\\net7.0\\Microsoft.Extensions.Options.dll"
+      "OriginalItemSpec": "C:\\Users\\ozkal\\.nuget\\packages\\microsoft.extensions.options\\7.0.1\\lib\\net7.0\\Microsoft.Extensions.Options.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Primitives.dll",
@@ -4080,6 +4114,23 @@
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Runtime.Serialization.Xml.dll"
     },
     {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\7ISikoIr.gz",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
+    },
+    {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\7XkkEjgu.gz",
       "SourceId": "ClientApp",
       "SourceType": "Computed",
@@ -4316,23 +4367,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Buffers.dll"
-    },
-    {
-      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\aMGrCzKP.gz",
-      "SourceId": "ClientApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Metadata.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Metadata.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\ApAuN8QU.gz",
@@ -4624,6 +4658,23 @@
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Threading.Tasks.Extensions.dll"
     },
     {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\d4OlJGUz.gz",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.Authorization.dll"
+    },
+    {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\d7nletDO.gz",
       "SourceId": "ClientApp",
       "SourceType": "Computed",
@@ -4828,6 +4879,23 @@
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Security.dll"
     },
     {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\eq07fiWI.gz",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Blazored.LocalStorage.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Blazored.LocalStorage.dll"
+    },
+    {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\eTTUay+c.gz",
       "SourceId": "ClientApp",
       "SourceType": "Computed",
@@ -4894,23 +4962,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Security.Cryptography.Encoding.dll"
-    },
-    {
-      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\FMZh1OyN.gz",
-      "SourceId": "ClientApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\fOriQkUI.gz",
@@ -5149,6 +5200,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Common.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\J54DuWW3.gz",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\jaLlBGzX.gz",
@@ -5440,23 +5508,6 @@
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.FileSystem.dll"
     },
     {
-      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\lMlWHxaa.gz",
-      "SourceId": "ClientApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.Extensions.Options.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll"
-    },
-    {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\LOcMVOYP.gz",
       "SourceId": "ClientApp",
       "SourceType": "Computed",
@@ -5557,6 +5608,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.IO.FileSystem.DriveInfo.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\Mie4MaH+.gz",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.Extensions.Options.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.Extensions.Options.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\MlySkTP7.gz",
@@ -6203,23 +6271,6 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Common.pdb"
-    },
-    {
-      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\Rgizd1+6.gz",
-      "SourceId": "ClientApp",
-      "SourceType": "Computed",
-      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
-      "BasePath": "/",
-      "RelativePath": "_framework/Microsoft.AspNetCore.Authorization.dll.gz",
-      "AssetKind": "Build",
-      "AssetMode": "All",
-      "AssetRole": "Alternative",
-      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll",
-      "AssetTraitName": "Content-Encoding",
-      "AssetTraitValue": "gzip",
-      "CopyToOutputDirectory": "PreserveNewest",
-      "CopyToPublishDirectory": "Never",
-      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Authorization.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\Rh3lPrJc.gz",
@@ -6968,6 +7019,23 @@
       "CopyToOutputDirectory": "PreserveNewest",
       "CopyToPublishDirectory": "Never",
       "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\System.Xml.XmlDocument.dll"
+    },
+    {
+      "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\build-gz\\ZQcYVRAR.gz",
+      "SourceId": "ClientApp",
+      "SourceType": "Computed",
+      "ContentRoot": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\",
+      "BasePath": "/",
+      "RelativePath": "_framework/Microsoft.AspNetCore.Components.dll.gz",
+      "AssetKind": "Build",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "RelatedAsset": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "CopyToOutputDirectory": "PreserveNewest",
+      "CopyToPublishDirectory": "Never",
+      "OriginalItemSpec": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\bin\\Debug\\net7.0\\wwwroot\\_framework\\Microsoft.AspNetCore.Components.dll"
     },
     {
       "Identity": "C:\\Users\\ozkal\\Documents\\Skola\\Webbutveckling\\Blazor\\LABB2\\Försök 2 MovieWatch\\MovieWatch\\ClientApp\\obj\\Debug\\net7.0\\scopedcss\\bundle\\ClientApp.styles.css",

@@ -614,12 +614,9 @@ C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\ClientApp.AssemblyInfo.cs
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\ClientApp.csproj.CoreCompileInputs.cache
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\ClientApp.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\Rgizd1+6.gz
-C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\FMZh1OyN.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\h+6a6Mnh.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\6mBz0FEs.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\09+SA8as.gz
-C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\aMGrCzKP.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\BSJJNPXS.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\4+KnJQK1.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\VFBxXEFU.gz
@@ -632,7 +629,6 @@ C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\vpRNO4tG.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\AqP+xNJk.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\SxoaO2Tg.gz
-C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\lMlWHxaa.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\Q2+D4SY0.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\QQfV6EXt.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\oH1Wpa5u.gz
@@ -838,3 +834,15 @@ C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\wwwroot\_framework\Microsoft.Extensions.Http.dll.gz
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\Microsoft.Extensions.Http.dll
 C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\QcwZ8N3n.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\wwwroot\_framework\Blazored.LocalStorage.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\wwwroot\_framework\Microsoft.AspNetCore.Components.Authorization.dll.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\wwwroot\_framework\Blazored.LocalStorage.dll.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\Blazored.LocalStorage.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\bin\Debug\net7.0\Microsoft.AspNetCore.Components.Authorization.dll
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\eq07fiWI.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\J54DuWW3.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\ZQcYVRAR.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\d4OlJGUz.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\7ISikoIr.gz
+C:\Users\ozkal\Documents\Skola\Webbutveckling\Blazor\LABB2\Försök 2 MovieWatch\MovieWatch\ClientApp\obj\Debug\net7.0\build-gz\Mie4MaH+.gz

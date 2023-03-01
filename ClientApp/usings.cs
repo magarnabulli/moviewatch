@@ -6,5 +6,6 @@ global using Common.ClientServices;
 global using Common.Dtos;
 global using Common.Extensions;
 global using Microsoft.AspNetCore.Components;
+global using Common.Models;
 
 
